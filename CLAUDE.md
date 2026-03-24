@@ -2,10 +2,10 @@
 
 ## Build
 
-Before every commit, rebuild the single-file plugin:
+Before every commit, rebuild the plugin zip:
 
 ```bash
 ./build-plugin.sh
 ```
 
-This concatenates all skills, commands, agents, and references into `plugin.md` at the repo root. Always commit `plugin.md` alongside any changes to source files.
+This packages all skills, commands, agents, and the plugin manifest into `payit2-campaign-manager.zip` at the repo root. Always commit the zip alongside any changes to source files.

@@ -4,9 +4,9 @@ AI-powered fundraising campaign manager for PayIt2.com. Create campaigns, genera
 
 ## Installation
 
-### Quick Start (single file)
+### Quick Start (zip)
 
-Copy [`plugin.md`](plugin.md) into your project and add it to your Claude Code context. This single file contains all skills, commands, agents, and reference data.
+Download [`payit2-campaign-manager.zip`](payit2-campaign-manager.zip) from the repo root and extract it into your project.
 
 ### Full Installation (repo clone)
 
