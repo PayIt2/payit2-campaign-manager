@@ -4,32 +4,22 @@ AI-powered fundraising campaign manager for PayIt2.com. Create campaigns, genera
 
 ## Installation
 
-### Quick Start (zip)
-
-Download [`payit2-campaign-manager.zip`](payit2-campaign-manager.zip) from the repo root and extract it into your project.
-
-### Full Installation (repo clone)
-
 1. Clone this repo:
    ```bash
    git clone https://github.com/PayIt2/payit2-campaign-manager.git
    ```
 
-2. Add the plugin to your Claude Code project:
+2. Load the plugin for a session:
    ```bash
-   claude project add-plugin /path/to/payit2-campaign-manager
+   claude --plugin-dir ./payit2-campaign-manager
    ```
 
-   Or manually add it to your `.claude/settings.json`:
-   ```json
-   {
-     "plugins": [
-       "/path/to/payit2-campaign-manager"
-     ]
-   }
+   Or install it to your user scope:
+   ```bash
+   claude plugin install payit2-campaign-manager@marketplace
    ```
 
-3. Restart Claude Code. The skills, commands, and agents will be available automatically.
+3. The skills, commands, and agents are available automatically once loaded.
 
 ### Verify Installation
 
@@ -110,14 +100,14 @@ Agents are deployed for heavier, autonomous tasks:
 
 Each skill includes detailed reference documents:
 
-- `campaign-creation/references/story-templates.md` — Category-specific story templates
-- `campaign-creation/references/title-formulas.md` — Proven title formulas with scoring
-- `campaign-promotion/references/post-templates.md` — Platform-specific post templates
-- `campaign-promotion/references/email-sequences.md` — Complete email drip sequences
-- `donor-engagement/references/thank-you-templates.md` — Thank-you templates by tier
-- `donor-engagement/references/update-templates.md` — Campaign update templates
-- `campaign-analytics/references/benchmark-data.md` — Category benchmarks and KPIs
-- `campaign-analytics/references/optimization-checklist.md` — Full optimization checklist
+- [campaign-creation/references/story-templates.md](skills/campaign-creation/references/story-templates.md) — Category-specific story templates
+- [campaign-creation/references/title-formulas.md](skills/campaign-creation/references/title-formulas.md) — Proven title formulas with scoring
+- [campaign-promotion/references/post-templates.md](skills/campaign-promotion/references/post-templates.md) — Platform-specific post templates
+- [campaign-promotion/references/email-sequences.md](skills/campaign-promotion/references/email-sequences.md) — Complete email drip sequences
+- [donor-engagement/references/thank-you-templates.md](skills/donor-engagement/references/thank-you-templates.md) — Thank-you templates by tier
+- [donor-engagement/references/update-templates.md](skills/donor-engagement/references/update-templates.md) — Campaign update templates
+- [campaign-analytics/references/benchmark-data.md](skills/campaign-analytics/references/benchmark-data.md) — Category benchmarks and KPIs
+- [campaign-analytics/references/optimization-checklist.md](skills/campaign-analytics/references/optimization-checklist.md) — Full optimization checklist
 
 ## Author
 
