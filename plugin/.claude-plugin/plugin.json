@@ -1,7 +1,7 @@
 {
-  "name": "payit2-campaign-manager",
+  "name": "payit2-campaign-coach",
   "version": "0.1.0",
-  "description": "AI-powered fundraising campaign manager for PayIt2.com — create campaigns, generate content, engage donors, and optimize performance through conversation with Claude.",
+  "description": "AI-powered fundraising campaign coach for PayIt2.com — create campaigns, generate content, engage donors, and optimize performance through conversation with Claude.",
   "author": {
     "name": "Brian Anderson, PayIt2 Founder"
   },

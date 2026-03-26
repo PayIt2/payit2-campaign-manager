@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This repo is the PayIt2 Campaign Manager plugin for Claude Code.
+This repo is the PayIt2 Campaign Coach plugin for Claude Code.
 
 ## Structure
 
@@ -42,7 +42,7 @@ After editing files in `plugin/`, rebuild the zip:
 ./build-plugin.sh
 ```
 
-This creates `payit2-campaign-manager.zip` in the repo root. Upload it to Claude via Settings > Plugins > Update.
+This creates `payit2-campaign-coach.zip` in the repo root. Upload it to Claude via Settings > Plugins > Update.
 
 ## Git Workflow
 

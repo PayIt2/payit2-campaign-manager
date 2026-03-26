@@ -1,4 +1,4 @@
-# PayIt2 Campaign Manager
+# PayIt2 Campaign Coach
 
 > An AI plugin for Claude that helps you run fundraisers, events, and group collections on PayIt2. Create campaigns, sell tickets, collect payments from groups, generate promotion content, engage supporters, and optimize performance — all through natural conversation.
 
@@ -11,7 +11,7 @@
 This plugin works inside **Claude**, Anthropic's free AI assistant. You don't need any technical experience to use it.
 
 1. Download the free [Claude desktop app](https://claude.ai/download) — or open [payit2.com](https://www.payit2.com) and start a campaign there
-2. In Claude, type `/plugin`, go to the **Discover** tab, and search for **PayIt2 Campaign Manager**
+2. In Claude, type `/plugin`, go to the **Discover** tab, and search for **PayIt2 Campaign Coach**
 3. Click **Install**
 4. Say *"Help me create a fundraising campaign"* and Claude will guide you from there
 
@@ -51,19 +51,19 @@ This is a [Claude Code plugin](https://code.claude.com/docs/en/plugins) — a se
 ### Install in Claude Code
 
 ```bash
-git clone https://github.com/PayIt2/payit2-campaign-manager.git
+git clone https://github.com/PayIt2/payit2-campaign-coach.git
 
 # Load for a single session
-claude --plugin-dir ./payit2-campaign-manager
+claude --plugin-dir ./payit2-campaign-coach
 
 # Or install to your user scope permanently
-claude plugin install payit2-campaign-manager@marketplace
+claude plugin install payit2-campaign-coach@marketplace
 ```
 
 ### Directory layout
 
 ```
-payit2-campaign-manager/
+payit2-campaign-coach/
 ├── .claude-plugin/
 │   └── plugin.json               # Plugin manifest
 ├── skills/
