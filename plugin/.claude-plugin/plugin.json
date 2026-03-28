@@ -1,9 +1,9 @@
 {
   "name": "payit2-campaign-coach",
   "version": "0.1.0",
-  "description": "AI-powered fundraising campaign coach for PayIt2.com — create campaigns, generate content, engage donors, and optimize performance through conversation with Claude.",
+  "description": "AI-powered campaign coach for PayIt2.com — create fundraising campaigns, plan and promote events, collect group payments, engage supporters, and optimize performance through conversation with Claude.",
   "author": {
     "name": "Brian Anderson, PayIt2 Founder"
   },
-  "keywords": ["fundraising", "crowdfunding", "payit2", "campaigns", "donor-engagement", "content-generation"]
+  "keywords": ["fundraising", "events", "ticketing", "group-payments", "crowdfunding", "payit2", "campaigns", "supporter-engagement", "content-generation"]
 }

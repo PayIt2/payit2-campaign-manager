@@ -2,10 +2,11 @@
 name: campaign-creation
 description: >
   This skill should be used when the user asks to "create a campaign", "start a fundraiser",
-  "write a campaign story", "set up my PayIt2 page", "help me write my fundraiser description",
+  "write a campaign story", "set up my PayIt2 page", "help me write my description",
   "optimize my campaign title", "what should my goal be", or needs guidance on crafting a
-  compelling fundraising page. Also triggers on "campaign setup", "fundraiser page", "story writing",
-  "campaign description", or "fundraising goal".
+  compelling campaign page for fundraising, events, or group collections on PayIt2. Also triggers
+  on "campaign setup", "fundraiser page", "story writing", "campaign description", "campaign goal",
+  "create a page", or "new campaign".
 version: 0.1.0
 ---
 

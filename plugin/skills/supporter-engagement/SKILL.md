@@ -1,15 +1,16 @@
 ---
-name: donor-engagement
+name: supporter-engagement
 description: >
-  This skill should be used when the user asks to "thank my donors", "write thank-you messages",
-  "re-engage supporters", "post a campaign update", "show impact", "write donor updates",
-  "follow up with donors", or needs guidance on turning donors into advocates. Also triggers
-  on "donor retention", "supporter engagement", "gratitude messages", "impact reporting",
-  "donation follow-up", or "donor CRM".
+  This skill should be used when the user asks to "thank my donors", "thank my supporters",
+  "write thank-you messages", "re-engage supporters", "post a campaign update", "show impact",
+  "write updates", "follow up with donors", "follow up with attendees", or needs guidance on
+  turning donors, attendees, or contributors into advocates on PayIt2. Also triggers on
+  "donor retention", "supporter engagement", "gratitude messages", "impact reporting",
+  "attendee follow-up", "post-event follow-up", or "supporter CRM".
 version: 0.1.0
 ---
 
-# Donor Engagement
+# Supporter Engagement
 
 Turn one-time donors into long-term advocates. Campaigns with active donor engagement raise significantly more because engaged donors share, re-donate, and recruit new supporters. Most organizers neglect this entirely — it's a massive competitive advantage.
 

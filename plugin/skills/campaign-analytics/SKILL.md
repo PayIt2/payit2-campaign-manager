@@ -2,10 +2,11 @@
 name: campaign-analytics
 description: >
   This skill should be used when the user asks to "check my campaign health", "how is my campaign
-  doing", "analyze my fundraiser performance", "why aren't I getting donations", "optimize my
-  campaign", "what should I do next", "campaign is stalled", or needs data-driven recommendations
-  to improve fundraising results. Also triggers on "campaign metrics", "conversion rate",
-  "fundraiser analytics", "performance score", "campaign diagnosis", or "fundraiser optimization".
+  doing", "analyze my performance", "why aren't I getting donations", "why aren't tickets selling",
+  "optimize my campaign", "what should I do next", "campaign is stalled", or needs data-driven
+  recommendations to improve results for fundraisers, events, or group collections on PayIt2.
+  Also triggers on "campaign metrics", "conversion rate", "analytics", "performance score",
+  "campaign diagnosis", "event analytics", or "campaign optimization".
 version: 0.1.0
 ---
 
@@ -80,7 +81,7 @@ Check:
 
 **If conversion is fine but growth has stalled**: The problem is engagement loop.
 - Prescribe: Thank donors, post updates, ask for shares, add co-organizers
-- Reference the `donor-engagement` skill for engagement strategies
+- Reference the `supporter-engagement` skill for engagement strategies
 
 ## Benchmarking
 

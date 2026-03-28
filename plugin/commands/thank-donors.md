@@ -6,7 +6,7 @@ argument-hint: [donor names/amounts or "all recent"]
 
 Generate personalized thank-you messages for: $ARGUMENTS
 
-Follow the donor-engagement skill's thank-you system:
+Follow the supporter-engagement skill's thank-you system:
 
 1. **Gather Donor Information**: Ask the organizer for a list of donors to thank. For each donor, get:
    - First name

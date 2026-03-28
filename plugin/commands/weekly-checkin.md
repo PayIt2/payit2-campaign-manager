@@ -31,7 +31,7 @@ Follow this structured workflow:
    - 1 email template for supporters
    - Specific posting schedule for the week
 
-5. **Donor Follow-Up**: Using the donor-engagement skill:
+5. **Supporter Follow-Up**: Using the supporter-engagement skill:
    - Ask if there are unthanked donors and generate thank-you messages
    - Suggest a re-engagement message if momentum has slowed
    - Recommend one donor-to-advocate conversion tactic for the week
