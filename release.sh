@@ -27,6 +27,24 @@ fi
 
 cd "$REPO_DIR"
 
+# Strip leading "v" for the version string written into plugin.json
+SEMVER="${VERSION#v}"
+PLUGIN_JSON="plugin/.claude-plugin/plugin.json"
+
+echo "==> Updating version in $PLUGIN_JSON to $SEMVER..."
+# Use Python for reliable in-place JSON editing (no GNU sed required on macOS)
+python3 -c "
+import json, sys
+with open('$PLUGIN_JSON') as f:
+    data = json.load(f)
+data['version'] = '$SEMVER'
+with open('$PLUGIN_JSON', 'w') as f:
+    json.dump(data, f, indent=2)
+    f.write('\n')
+"
+echo "    Done."
+
+echo ""
 echo "==> Building plugin zip..."
 ./build-plugin.sh
 
