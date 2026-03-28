@@ -1,110 +1,101 @@
 ---
 name: campaign-analytics
 description: >
-  This skill should be used when the user asks to "check my campaign health", "how is my campaign
-  doing", "analyze my performance", "why aren't I getting donations", "why aren't tickets selling",
-  "optimize my campaign", "what should I do next", "campaign is stalled", or needs data-driven
-  recommendations to improve results for fundraisers, events, or group collections on PayIt2.
-  Also triggers on "campaign metrics", "conversion rate", "analytics", "performance score",
-  "campaign diagnosis", "event analytics", or "campaign optimization".
-version: 0.2.0
+  This skill should be used when the user asks to "check my campaign health",
+  "how is my campaign doing", "analyze my performance", "why aren't I getting
+  donations", "why aren't tickets selling", "optimize my campaign", "what should
+  I do next", "campaign is stalled", or needs data-driven recommendations to
+  improve results for fundraisers, events, or group collections on PayIt2.
+  Also triggers on "campaign metrics", "conversion rate", "analytics",
+  "performance score", "campaign diagnosis", "event analytics", or
+  "campaign optimization".
+version: 1.0.0
 ---
 
 # Campaign Analytics
 
-Diagnose campaign health, identify bottlenecks, and prescribe specific actions to improve fundraising performance. This skill turns raw campaign data into actionable coaching.
+Diagnose campaign health, identify bottlenecks, and prescribe specific actions — for fundraisers, events, and group collections. This skill turns raw campaign data into actionable coaching.
 
-## Campaign Health Score
+## Health Score Formula
 
-Calculate a health score (0-100) based on these weighted factors:
+Calculate a 0-100 health score using type-specific weights:
 
-| Factor | Weight | Scoring criteria |
-|--------|--------|-----------------|
-| Momentum | 25% | Donation velocity vs. category average |
+### Fundraiser Weights
+| Factor | Weight | What to measure |
+|--------|--------|----------------|
+| Momentum | 25% | Donation velocity vs. >2/day target in week 1 |
 | Social reach | 20% | Shares, unique visitors, share-to-visit ratio |
 | Story quality | 15% | Description length, photo present, video present, title strength |
 | Donor engagement | 15% | Thank-you rate, update frequency, donor return rate |
-| Goal progress | 15% | Percentage of goal reached vs. days active |
+| Goal progress | 15% | % of goal reached vs. days active |
 | Network activation | 10% | Co-organizer count, email list usage, channel diversity |
 
-### Score Interpretation
+### Event Weights
+| Factor | Weight | What to measure |
+|--------|--------|----------------|
+| Registration velocity | 25% | % of capacity sold per week (healthy: 10-15%/week) |
+| Capacity utilization | 20% | % of total capacity sold (target 80%+ by event date) |
+| Promotion reach | 20% | Channels active, partner cross-promotion, share rate |
+| Engagement | 15% | Registrant-to-sharer ratio (target: 1 in 5 registrants shares) |
+| Revenue | 10% | Revenue vs. break-even vs. goal |
+| Logistics readiness | 10% | Communication cadence, confirmation emails set up |
+
+### Collection Weights
+| Factor | Weight | What to measure |
+|--------|--------|----------------|
+| Payment rate | 30% | % of group that has paid (target: 80%+ by deadline) |
+| Deadline proximity | 20% | Days remaining vs. payment rate (are you on pace?) |
+| Communication cadence | 20% | Reminder timing following Friendly Collector framework |
+| Response rate | 15% | % who respond to messages (even "I'll pay soon" counts) |
+| Transparency | 15% | Cost breakdown visible, progress updates shared |
+
+## Score Interpretation (All Types)
 
 | Score | Status | Action |
 |-------|--------|--------|
 | 80-100 | Thriving | Maintain cadence, expand to new channels |
-| 60-79 | Healthy | Address 1-2 weak areas, increase promotion frequency |
-| 40-59 | At risk | Significant changes needed — refresh content, new channels, re-engagement |
-| 20-39 | Critical | Major intervention — rewrite story, new media, activate inner circle |
-| 0-19 | Stalled | Consider relaunch with new strategy |
+| 60-79 | Healthy | Address 1-2 weak areas, increase promotion |
+| 40-59 | At risk | Significant changes needed — dispatch campaign-coach agent |
+| 20-39 | Critical | Major intervention — dispatch campaign-coach agent |
+| 0-19 | Stalled | Consider relaunch or pivot |
 
 ## Diagnostic Framework
 
-When an organizer asks "why aren't I getting donations?" or "my campaign is stalled," run through this diagnostic:
+When an organizer asks "why isn't this working?" run through all 3 stages:
 
 ### Stage 1: Traffic Diagnosis
-
 **Question**: Are people seeing the campaign?
 
-Check:
-- Total page views in last 7 days
-- Traffic sources (social, direct, email, search)
-- Number of unique shares
-- Channels being used
+- Fundraiser: page views, shares, channel diversity
+- Event: registration page visits, social reach, partner posts
+- Collection: did launch message reach all group members?
 
-**If traffic is low**: The problem is promotion, not the page.
-- Prescribe: Increase posting frequency, activate new channels, email blast, ask supporters to share
-- Reference the `campaign-promotion` skill for detailed promotion strategies
+**If traffic is low**: Problem is promotion, not the page. Reference campaign-promotion skill.
 
 ### Stage 2: Conversion Diagnosis
+**Question**: Are visitors taking action?
 
-**Question**: Are visitors donating?
+- Fundraiser: visit-to-donation rate (healthy: 5-15%), avg donation $35-75
+- Event: visit-to-registration rate (healthy: 15-25%), ticket tier distribution
+- Collection: payment rate per reminder sent (should increase after each message)
 
-Check:
-- Visit-to-donation conversion rate (healthy = 5-15%)
-- Average time on page
-- Bounce rate
-- Average donation amount
-
-**If traffic is fine but conversion is low**: The problem is the page itself.
-- Prescribe: Rewrite title, update story (shorter + more emotional), add/improve photo, add video
-- Reference the `campaign-creation` skill for page optimization
+**If traffic is fine but conversion is low**: Problem is the page. Reference campaign-creation skill.
 
 ### Stage 3: Engagement Diagnosis
+**Question**: Are supporters becoming advocates?
 
-**Question**: Are donors becoming advocates?
+- Fundraiser: donor-to-sharer ratio (target >15%), update frequency
+- Event: registrant-to-sharer ratio (target: 1 in 5), re-share content posted
+- Collection: did payers bring peer pressure? Are non-payers responding to reminders?
 
-Check:
-- Donor-to-sharer ratio (target: >15%)
-- Repeat donation rate
-- Update frequency (organizer posting updates?)
-- Thank-you completion rate
+**If conversion is fine but growth has stalled**: Problem is engagement loop. Reference supporter-engagement skill.
 
-**If conversion is fine but growth has stalled**: The problem is engagement loop.
-- Prescribe: Thank donors, post updates, ask for shares, add co-organizers
-- Reference the `supporter-engagement` skill for engagement strategies
+## Type-Specific KPIs
 
-## Benchmarking
-
-Compare campaign performance against category benchmarks:
-
-### Category Benchmarks (based on GoFundMe aggregate data)
-
-| Category | Avg. raised | Avg. donors | Avg. campaign length | Success rate |
-|----------|------------|-------------|---------------------|-------------|
-| Medical/Health | $5,000-$15,000 | 50-150 | 30-60 days | 22% |
-| Legal Defense | $3,000-$10,000 | 30-100 | 30-45 days | ~20% |
-| Emergency/Crisis | $2,000-$8,000 | 25-80 | 14-30 days | 28% |
-| Education | $1,500-$5,000 | 20-60 | 30-60 days | 25% |
-| Memorial/Funeral | $3,000-$10,000 | 40-120 | 14-21 days | 35% |
-| Community/Nonprofit | $2,000-$10,000 | 30-100 | 30-90 days | 18% |
-
-### Key Performance Indicators
-
-Track and report on these KPIs weekly:
-
+### Fundraiser KPIs
 | KPI | Formula | Target |
 |-----|---------|--------|
-| Donation velocity | Donations per day | >2/day for first week |
+| Donation velocity | Donations per day | >2/day in week 1 |
 | Share rate | Shares / page views | >5% |
 | Conversion rate | Donations / unique visitors | 5-15% |
 | Average donation | Total raised / donor count | $35-$75 |
@@ -112,65 +103,42 @@ Track and report on these KPIs weekly:
 | Update frequency | Updates / weeks active | >1/week |
 | Time to first donation | Hours from launch to first gift | <4 hours |
 
-## Optimization Playbook
-
-Based on the health score, prescribe from this action menu:
-
-### Quick Wins (implement today)
-1. Add or improve the primary photo (face visible, emotional)
-2. Shorten the description to under 150 words
-3. Add a co-organizer (3x success rate multiplier)
-4. Thank all unthanked donors
-5. Post one campaign update
-
-### Medium Effort (implement this week)
-1. Record and upload a personal video (4x more funds)
-2. Send personalized emails to top 20 contacts
-3. Create platform-native content for 3+ social channels
-4. Post a milestone update or "story behind the story" content
-5. Set up a content calendar for the next 2 weeks
-
-### Strategic Moves (implement if campaign is stalled)
-1. Rewrite the campaign title (test 3 options)
-2. Refresh the entire description with new story angle
-3. Pitch local media for coverage
-4. Cross-post to community groups (Nextdoor, Reddit, Facebook Groups)
-5. Launch a "final push" campaign with deadline urgency
-
-## Reporting Templates
-
-Generate weekly performance reports covering:
-
-1. **Headline metrics**: Amount raised, donors, shares (with week-over-week change)
-2. **Health score**: Current score with factor breakdown
-3. **What's working**: Top-performing content and channels
-4. **What needs attention**: Lowest-scoring factors with specific fixes
-5. **This week's action items**: 3-5 prioritized tasks
-
-## Event-Specific Analytics
-
-When analyzing an **event** (not a fundraiser), track these additional KPIs:
-
-### Event KPIs (Track Weekly)
+### Event KPIs
 | KPI | Healthy Range | Warning Sign |
 |-----|--------------|--------------|
-| Registration velocity | 10-15% of capacity per week | <5% per week after launch |
-| Capacity utilization | On track to 80%+ by event date | <50% at midpoint |
-| Early bird conversion | 25-35% of total tickets | <15% (pricing too high or promotion too weak) |
-| Ticket tier distribution | Even spread across tiers | >80% in cheapest tier (value gap too large) |
-| Share rate | 1 in 5 registrants shares | <1 in 10 (event not share-worthy) |
-| Email open rate | 40-60% for event emails | <25% (subject lines or timing) |
+| Registration velocity | 10-15% of capacity/week | <5% after launch week |
+| Capacity utilization | On track to 80%+ by event | <50% at midpoint |
+| Early bird conversion | 25-35% of total tickets | <15% |
+| Ticket tier distribution | Even spread across tiers | >80% in cheapest tier |
+| Registrant share rate | 1 in 5 registrants shares | <1 in 10 |
+| Email open rate | 40-60% | <25% |
 
-### Event Health Score Adjustments
-When scoring event health, replace donation-specific factors:
-- **Momentum (25%)**: Registration velocity relative to capacity and time remaining
-- **Social reach (20%)**: Shares, tags, partner promotion reach
-- **Page quality (15%)**: Description clarity, visual appeal, tier structure
-- **Registration conversion (15%)**: Visitors-to-registrants ratio (healthy: 15-25%)
-- **Promotion breadth (15%)**: Number of channels actively used
-- **Urgency signals (10%)**: Countdown messaging, scarcity indicators, price tier deadlines
+### Collection KPIs
+| KPI | Healthy | Warning |
+|-----|---------|---------|
+| Payment rate at midpoint | >50% paid | <30% paid |
+| Payment rate at deadline | >80% paid | <60% paid |
+| Response rate to messages | >70% (paid or acknowledged) | <40% |
+| Days to full collection | 2-3 weeks from launch | >4 weeks with <80% paid |
+
+## Optimization Playbook by Effort
+
+### Quick Wins (do today — all types)
+- **Fundraiser**: Add/improve primary photo, shorten description to <150 words, add co-organizer, thank unthanked donors, post one update
+- **Event**: Post urgency content (seats remaining, days left), send reminder to opened-but-didn't-register email segment, update hero image
+- **Collection**: Send a progress update to the group, privately follow up with 1-2 non-payers
+
+### Medium Effort (this week)
+- **Fundraiser**: Record and upload video (4x more funds), send personalized emails to top 20 contacts, create content for 3+ social channels
+- **Event**: Activate partner cross-promotion, create social proof content ("X registrants"), launch group discount offer
+- **Collection**: Add a co-collector, extend deadline with real-constraint framing, restructure payment tier if response is concentrated in one option
+
+### Strategic Moves (campaign is stalled)
+- **Fundraiser**: Rewrite title (test 3 options), refresh full description, pitch local media
+- **Event**: Consider price adjustment, add a new tier, reach out to complementary organizations for cross-promotion
+- **Collection**: One-on-one outreach to every non-payer, consider scope reduction to match actual payment rate
 
 ## Additional Resources
 
-- **`references/benchmark-data.md`** — Detailed category benchmarks and success factors
-- **`references/optimization-checklist.md`** — Comprehensive checklist for campaign optimization
+- **`references/benchmark-data.md`** — Detailed benchmarks by category and campaign type
+- **`references/optimization-checklist.md`** — Comprehensive optimization checklist unified across all types

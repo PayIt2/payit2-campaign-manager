@@ -1,150 +1,192 @@
 ---
 name: campaign-promotion
 description: >
-  This skill should be used when the user asks to "promote my campaign", "share my fundraiser",
-  "promote my event", "create social media posts", "build a content calendar", "schedule posts",
-  "write emails for my campaign", "how do I get more donations", "sell more tickets",
-  "increase visibility", or needs guidance on multi-channel promotion for fundraisers, events,
-  or group collections on PayIt2. Also triggers on "social media strategy", "campaign sharing",
-  "email outreach", "press release", "community posting", "event promotion", or "campaign marketing".
-version: 0.2.0
+  This skill should be used when the user asks to "promote my campaign", "share
+  my fundraiser", "promote my event", "create social media posts", "build a
+  content calendar", "schedule posts", "write emails for my campaign", "how do I
+  get more donations", "sell more tickets", "increase visibility", "campaign
+  marketing", "share my fundraiser", or needs multi-channel promotion guidance
+  for fundraisers, events, or group collections on PayIt2. Also triggers on
+  "social media strategy", "campaign sharing", "email outreach", "press release",
+  "community posting", or "event promotion".
+version: 1.0.0
 ---
 
 # Campaign Promotion
 
-Guide organizers through multi-channel promotion strategies that drive donations. The #1 reason campaigns fail is under-promotion — organizers share once and stop. This skill turns promotion into a systematic, repeatable process.
+Guide organizers through multi-channel promotion for any campaign type. Under-promotion is the #1 reason campaigns fail. This skill turns promotion into a systematic process for fundraisers, events, and group collections.
 
-## The Promotion Engine
+## Core Principle: The 2.5x Rule
 
-### Core Principle: The 2.5x Rule
+Each new sharing method used leads to a **2.5x increase in campaign visibility**. Organizers who share through 6+ methods receive **3x more engagement**. Maximize channel diversity and posting frequency.
 
-Each new sharing method used leads to a **2.5x increase in campaign visibility**. Organizers who share 6+ times in the first few days receive **3x more donations**. The goal is to maximize channel diversity and posting frequency.
+## Channel Priority by Campaign Type
 
-### Channel Priority Matrix
+### Fundraiser: Lead with Personal Networks
+| Channel | Priority | Why |
+|---------|----------|-----|
+| Facebook | High | Broad reach, emotional content performs well |
+| Personal text/WhatsApp | High | Highest conversion rate (inner circle) |
+| Email | High | Best per-contact conversion for direct asks |
+| Instagram | Medium | Visual storytelling, younger demographics |
+| TikTok | Medium | Viral potential for emotional stories |
+| Twitter/X | Medium | News-driven, legal/political causes |
+| Nextdoor | Low-Medium | Local causes, neighborhood impact |
+| LinkedIn | Low | Professional networks, legal defense cases |
 
-Prioritize channels by the organizer's network strength:
+### Event: Lead with Social Discovery
+| Channel | Priority | Why |
+|---------|----------|-----|
+| Instagram | High | Visual, shareable, event discovery |
+| Facebook Events | High | Native event feature, community reach |
+| TikTok | High | Countdown content, FOMO, viral potential |
+| Email | High | Confirmed buyers share more after registration |
+| Community boards | Medium | Nextdoor, local Facebook Groups |
+| LinkedIn | Medium | Professional/industry events |
+| Partner cross-promotion | High | Other organizations with same audience |
 
-| Channel | Best for | Posting cadence | Content type |
-|---------|----------|----------------|--------------|
-| Facebook | Broad reach, older demographics | 3-4x/week | Story posts, milestone updates, photo carousels |
-| Instagram | Visual storytelling, younger demographics | 4-5x/week (including Stories) | Photos, Reels, Stories with link stickers |
-| TikTok | Viral potential, emotional storytelling | 3-4x/week | 60-90 sec personal videos, updates |
-| Twitter/X | News-driven campaigns, legal/political causes | Daily | Thread storytelling, milestone tweets |
-| LinkedIn | Professional networks, legal defense cases | 2-3x/week | Professional framing, career/justice angle |
-| WhatsApp/Text | Inner circle, highest conversion | Launch + milestones | Personal messages with direct link |
-| Email | Personalized asks, highest per-contact conversion | Launch + weekly | Personalized letters with specific ask amounts |
-| Nextdoor | Local community causes | 2-3x/week | Neighborhood framing, local impact |
-| Reddit | Niche communities, advice-seekers | 1-2x targeted | Authentic story posts in relevant subreddits |
+### Collection: Lead with Direct Messaging
+| Channel | Priority | Why |
+|---------|----------|-----|
+| Group text / WhatsApp group | High | Where the group already communicates |
+| Email | High | Formal, easy to reply and ask questions |
+| Slack / Teams | High | Work or club groups |
+| Facebook Group | Medium | If the group has one |
+| Social media | Low | Collections are private; public posts have low ROI |
 
-### Content Calendar Framework
+## Content Calendar Frameworks
 
-Generate a 30-day content calendar structured in phases:
+### Fundraiser: 4 Phases over 30 Days
 
-**Phase 1: Launch Blitz (Days 1-3)**
-- Day 1 AM: Launch announcement on all primary channels
+**Phase 1 — Launch Blitz (Days 1-3)**
+- Day 1 AM: Announcement on all primary channels
 - Day 1 PM: Personal text/WhatsApp to inner circle (10-20 people)
 - Day 1 Evening: Email blast to full contact list
 - Day 2: Video content — personal appeal or behind-the-scenes
-- Day 3: First thank-you post (public gratitude to early donors)
+- Day 3: First thank-you post (gratitude to early donors)
 
-**Phase 2: Momentum Building (Days 4-14)**
+**Phase 2 — Momentum (Days 4-14)**
 - 3x/week social posts with rotating content angles
 - Weekly email update to supporters
 - Milestone celebrations (25%, 50% progress)
 - Re-share requests to existing donors
-- Behind-the-scenes content and updates
 
-**Phase 3: Sustain & Expand (Days 15-25)**
+**Phase 3 — Sustain & Expand (Days 15-25)**
 - Fresh storytelling angles (impact stories, new photos)
 - Community cross-posting (local groups, relevant forums)
 - Press outreach for newsworthy campaigns
-- Donor spotlight posts (with permission)
 - "Still time to help" messaging
 
-**Phase 4: Final Push (Days 26-30)**
-- Urgency messaging: "X days left" countdown
+**Phase 4 — Final Push (Days 26-30)**
+- Countdown: "X days left"
 - "So close" posts showing remaining gap
 - Final email blast with compelling CTA
-- Direct asks to high-potential contacts who haven't donated
-- Thank-you + "help us cross the finish line" combo posts
+- Direct asks to high-potential contacts who haven't given
 
-### Platform-Specific Content Generation
+### Event: 6 Phases over 4-6 Weeks
 
-When generating social media posts, adapt content to each platform's native format:
+**Phase 1 — Announce (6 weeks out)**
+- Public announcement across all channels
+- Open early bird registration
+- Email blast to existing list
 
-**Facebook**: Write 2-3 paragraph posts with emotional hooks. Include a photo. End with a direct link and CTA. Use Facebook's fundraiser tag features when available.
+**Phase 2 — Early Bird (4-5 weeks out)**
+- Close early bird, open regular pricing
+- Lineup/agenda reveal content
+- Partner/sponsor cross-promotion begins
 
-**Instagram**: Write captions under 125 words (before the "more" fold). Use 5-10 relevant hashtags. Create carousel posts for complex stories. Use Stories for daily micro-updates with link stickers.
+**Phase 3 — Social Proof (3 weeks out)**
+- "X tickets sold" posts
+- Testimonials from past attendees or registrants
+- Speaker/performer spotlights
 
-**TikTok**: Write scripts for 60-90 second videos. Hook in first 3 seconds. Authentic > polished. Trending sounds boost visibility. Use text overlays for key points.
+**Phase 4 — Last Chance (1-2 weeks out)**
+- Urgency: "Only X spots left" or "X days remaining"
+- Price tier deadline messaging if applicable
+- Direct outreach to undecided prospects
 
-**Email**: Subject line under 50 characters. Personalize the greeting. One clear CTA button. Include a specific ask amount based on relationship tier.
+**Phase 5 — Day-Of**
+- Live coverage, stories, behind-the-scenes
+- Attendee-generated content prompts (hashtag, photo spots)
 
-**Text/WhatsApp**: Keep under 160 characters + link. Extremely personal. Reference the relationship. Ask for both donations AND shares.
+**Phase 6 — Post-Event**
+- Thank yous within 48 hours
+- Photo gallery within 1 week
+- Next event teaser
 
-### Email Outreach System
+### Collection: 5 Phases over 2-3 Weeks
 
-Structure email outreach in tiers:
+**Phase 1 — Launch (Day 0)**
+- Send to all group channels: brief, friendly, link + deadline
 
-| Tier | Audience | Ask | Template style |
-|------|----------|-----|---------------|
-| 1 - Inner circle | Family, close friends | Specific dollar amount + share | Deeply personal, first-person |
-| 2 - Extended network | Colleagues, acquaintances | General donation + share | Warm but broader appeal |
-| 3 - Community | Local groups, organizations | Share first, donate if moved | Community-framing, impact-focused |
-| 4 - Cold outreach | Media, influencers, organizations | Coverage or signal boost | Professional pitch, newsworthy angle |
+**Phase 2 — Progress (Day 3)**
+- "We're at X% — thanks to everyone who's paid"
+- Lead with gratitude, include link for those who haven't
 
-### Press & Media Outreach
+**Phase 3 — Midpoint (Day 7 or halfway)**
+- "Over halfway there — X of Y people have paid"
+- Social proof drives action
 
-For campaigns with newsworthy angles (legal cases, community impact, unusual circumstances):
+**Phase 4 — Urgency (3 days before deadline)**
+- "Deadline is [date]. We still need X people to pay to [achieve goal]."
+- Connect to a real consequence
 
-1. Write a press release following AP style
-2. Identify local media contacts (TV stations, newspapers, online outlets)
-3. Craft a personalized pitch email for each outlet
-4. Include campaign link, high-res photo, and contact info
-5. Follow up 48 hours after initial pitch
+**Phase 5 — Deadline (Day of)**
+- "Last day!" — short, no guilt, just facts + link
 
-## Content Angles
+*Max 5-6 total messages to full group. Private follow-ups only after deadline.*
 
-Rotate through these content types to keep the feed fresh:
+## Content Rotation Angles
 
-1. **The Story** — Full situation explanation
-2. **The Person** — Humanizing the beneficiary
-3. **The Progress** — Milestone celebrations
-4. **The Gratitude** — Thanking donors publicly
-5. **The Urgency** — Deadlines and consequences
-6. **The Impact** — How funds are being used
-7. **The Ask** — Direct donation requests
-8. **The Share** — Asking supporters to spread the word
+Rotate through these 8 angles to keep promotion fresh (all types have equivalents):
 
-## Event Promotion Differences
+| Angle | Fundraiser | Event | Collection |
+|-------|-----------|-------|-----------|
+| Story / Announcement | Full situation explanation | What, when, where, why it matters | What this is for and how it works |
+| Person / Lineup | Humanize the beneficiary | Speakers, performers, organizers | Group context, who's involved |
+| Progress | Milestone celebrations | Tickets sold milestones | Payment progress ("12 of 20 paid!") |
+| Gratitude | Thanking donors publicly | Thanking registrants and partners | Thanking those who've paid |
+| Urgency | Deadline / remaining gap | Countdown / scarcity | Deadline / payment needed |
+| Impact | How funds are being used | What attendees will experience | What the collected funds enable |
+| Ask | Direct donation request | Direct ticket purchase prompt | Direct payment request |
+| Share | Ask supporters to spread word | Ask registrants to bring friends | N/A (collections are private) |
 
-When promoting an **event** (not a fundraiser), adjust these strategies:
+## Platform-Specific Formatting
 
-### Urgency Model
-- Fundraisers use **goal-based urgency**: "We're 60% to our goal — help us close the gap"
-- Events use **countdown urgency**: "Only 12 days until the event" and **scarcity urgency**: "Only 30 tickets left"
-- Combine both: "Early bird ends Friday — 47 of 100 spots claimed"
+- **Facebook**: 2-3 paragraphs, emotional hook, photo, direct link + CTA at end
+- **Instagram**: Caption under 125 words before fold, 5-10 relevant hashtags, Story version with link sticker
+- **TikTok**: 60-90 second script, hook in first 3 seconds, authentic > polished
+- **Twitter/X**: Under 280 chars or thread format, punchy, link in first tweet
+- **LinkedIn**: 3-4 paragraphs, professional framing, career/community angle
+- **Email**: Subject under 50 chars, personalized greeting, one CTA, P.S. line with share ask
+- **Text/WhatsApp**: Under 160 chars + link, extremely personal, one clear ask
 
-### Content Angles for Events
-Replace the 8 fundraising content angles with event equivalents:
-1. **Announcement** — What, when, where, why it matters
-2. **Lineup/Agenda** — Speakers, performers, activities, schedule highlights
-3. **Social Proof** — "X people registered", testimonials from past attendees
-4. **Behind-the-Scenes** — Venue prep, speaker interviews, planning sneak peeks
-5. **Countdown** — Milestone countdowns (30 days, 2 weeks, 1 week, tomorrow)
-6. **Last Chance** — Final ticket availability, price increase warnings
-7. **FOMO** — What attendees will experience that non-attendees will miss
-8. **Post-Event** — Highlights, photos, "you had to be there", next event teaser
+## Email Outreach Tiers
 
-### Promotion Timeline for Events
-- **6 weeks out**: Announce event, open early bird registration
-- **4 weeks out**: Close early bird, share agenda/lineup, email blast
-- **2 weeks out**: Social proof push ("X tickets sold"), partner cross-promotion
-- **1 week out**: Last chance messaging, direct outreach to undecided
-- **Day of**: Live coverage, social media posts, attendee engagement
-- **Post-event**: Thank yous, photo gallery, feedback survey, next event teaser
+| Tier | Audience | Ask | Style |
+|------|----------|-----|-------|
+| 1 — Inner circle | Family, close friends | Specific dollar amount + share / buy a ticket / pay now | Deeply personal, first-person |
+| 2 — Extended network | Colleagues, acquaintances | General support + share | Warm, broader appeal |
+| 3 — Community | Local groups, organizations | Share first, act if moved | Community-framing, impact-focused |
+| 4 — Cold outreach | Media, influencers, orgs | Coverage or signal boost | Professional pitch, newsworthy angle |
+
+## SEO & Amplification
+
+For campaigns that benefit from discovery (fundraisers and events, not collections):
+- Use 3-5 searchable keywords naturally in the page description and social posts
+- Cross-post to relevant community groups (Nextdoor, Reddit, Facebook Groups, local forums)
+- For newsworthy campaigns: write a press release, pitch local TV/newspaper, reach out to relevant bloggers/podcasters
+- Use event directories if applicable (Eventbrite, local community calendars, Meetup)
+
+## Key Statistics
+
+- Each new sharing method = **2.5x increase in visibility** (all types)
+- 6+ sharing methods = **3x more donations** (fundraisers)
+- **61% of millennials** discover events through social media (events)
+- Events promoted 4-6 weeks out sell **70% more tickets** than 2-week promotions (events)
+- Max **5-6 messages** to full group before diminishing returns (collections)
 
 ## Additional Resources
 
-- **`references/post-templates.md`** — Ready-to-customize templates for every platform and content angle
-- **`references/email-sequences.md`** — Complete email drip sequences for launch, updates, and final push
+- **`references/post-templates.md`** — Ready-to-customize social post templates for all types and platforms
+- **`references/email-sequences.md`** — Drip sequences for all types (launch, updates, final push, event countdown, collection reminders)
