@@ -9,27 +9,21 @@ All plugin content lives in the `plugin/` folder:
 ```
 plugin/
   .claude-plugin/plugin.json    # Plugin manifest
-  skills/                       # 6 workflow skills
-    campaign-creation/SKILL.md
-    campaign-promotion/SKILL.md
-    donor-engagement/SKILL.md
-    campaign-analytics/SKILL.md
-    event-management/SKILL.md
-    group-collection/SKILL.md
-  commands/                     # 6 slash commands
-    launch-fundraiser.md
-    plan-event.md
-    collect-from-group.md
-    weekly-checkin.md
-    boost-campaign.md
-    thank-donors.md
-  agents/                       # 6 autonomous agents
-    campaign-coach.md
-    content-generator.md
-    donor-outreach.md
-    seo-optimizer.md
-    event-promoter.md
-    group-collector.md
+  skills/                       # 5 workflow skills
+    campaign-context/SKILL.md     # Shared context-gathering engine
+    campaign-creation/SKILL.md    # Create and launch campaigns
+    campaign-promotion/SKILL.md   # Multi-channel promotion strategies
+    campaign-analytics/SKILL.md   # Campaign health analysis
+    supporter-engagement/SKILL.md # Thank-yous, re-engagement, outreach
+  commands/                     # 4 slash commands
+    campaign.md                   # /campaign - create and launch
+    check-in.md                   # /check-in - weekly health check
+    promote.md                    # /promote - promotion strategy
+    engage.md                     # /engage - supporter communications
+  agents/                       # 3 autonomous agents
+    campaign-coach.md             # Deep campaign health analysis
+    content-generator.md          # Batch content generation
+    supporter-outreach.md         # Personalized supporter comms
 ```
 
 Root-level files (`CLAUDE.md`, `README.md`, `LICENSE`, `build-plugin.sh`) are NOT included in the zip.
