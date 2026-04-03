@@ -1,6 +1,6 @@
 # PayIt2 Campaign Coach
 
-> An AI plugin for Claude that helps you run fundraisers, events, and group collections on PayIt2. Create campaigns, sell tickets, collect payments from groups, generate promotion content, engage supporters, and optimize performance — all through natural conversation.
+> An AI plugin for Claude that helps you run fundraisers, events, and groups on PayIt2. Create campaigns, sell tickets, collect payments from groups, generate promotion content, engage supporters, and optimize performance — all through natural conversation.
 
 **Works with:** [Claude desktop app](https://claude.ai/download) (free) · Claude Code CLI
 
@@ -25,10 +25,10 @@ Once installed, the plugin gives Claude four commands:
 
 | Command | What it does |
 |---------|-------------|
-| `/campaign` | Walks you through building any campaign from scratch — fundraiser, event, or group collection — with story, title, goal, ticketing, cost-splitting, and launch strategy |
+| `/campaign` | Walks you through building any campaign from scratch — fundraiser, event, or group — with story, title, goal, ticketing, cost-splitting, and launch strategy |
 | `/promote` | Generates a complete promotion package: platform-specific social posts, email sequences, content calendar, and SEO recommendations |
 | `/check-in` | Health check on any active campaign with a score, diagnosis, and specific action items |
-| `/engage` | Generates personalized messages for supporters — thank-yous, updates, re-engagement, share requests, and non-payer follow-ups |
+| `/engage` | Generates personalized messages for supporters — thank-yous, updates, re-engagement, share requests, and unpaid member follow-ups |
 
 You can also just describe your situation in plain language — Claude will figure out which skills to use.
 
@@ -63,7 +63,7 @@ claude plugin install payit2-campaign-coach@marketplace
 ```
 plugin/
 ├── .claude-plugin/
-│   └── plugin.json                   # Plugin manifest (v1.0.0)
+│   └── plugin.json                   # Plugin manifest (v1.1.0)
 ├── skills/
 │   ├── campaign-context/             # Shared context engine (used by all commands)
 │   │   └── SKILL.md
@@ -116,7 +116,7 @@ Each skill pulls from reference documents that encode research and best practice
 **Campaign creation:**
 - [story-templates.md](plugin/skills/campaign-creation/references/story-templates.md) — Category-specific story frameworks
 - [title-formulas.md](plugin/skills/campaign-creation/references/title-formulas.md) — Proven title formulas with scoring
-- [ticket-strategy.md](plugin/skills/campaign-creation/references/ticket-strategy.md) — Ticket tier templates, early bird formulas, group discounts
+- [ticket-strategy.md](plugin/skills/campaign-creation/references/ticket-strategy.md) — Ticket type templates, early bird formulas, group discounts
 - [cost-splitting-guide.md](plugin/skills/campaign-creation/references/cost-splitting-guide.md) — Fixed, tiered, and flexible split models with fee transparency
 
 **Promotion:**
@@ -130,7 +130,7 @@ Each skill pulls from reference documents that encode research and best practice
 **Supporter engagement:**
 - [thank-you-templates.md](plugin/skills/supporter-engagement/references/thank-you-templates.md) — Thank-you messages by tier and campaign type
 - [update-templates.md](plugin/skills/supporter-engagement/references/update-templates.md) — Campaign update templates
-- [reminder-templates.md](plugin/skills/supporter-engagement/references/reminder-templates.md) — Collection reminder cadences, re-engagement, and celebration templates
+- [reminder-templates.md](plugin/skills/supporter-engagement/references/reminder-templates.md) — Group reminder cadences, re-engagement, and celebration templates
 
 ### Research behind the plugin
 
