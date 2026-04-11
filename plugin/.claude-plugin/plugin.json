@@ -18,8 +18,6 @@
     "event-ticketing",
     "cost-splitting"
   ],
-  "hooks": "hooks.json",
-  "mcpServers": "mcp.json",
   "userConfig": {
     "payit2_api_key": {
       "description": "Your PayIt2 API key (found in PayIt2 dashboard > Settings > API)",
