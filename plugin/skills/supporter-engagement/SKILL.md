@@ -1,14 +1,6 @@
 ---
 name: supporter-engagement
-description: >
-  This skill should be used when the user asks to "thank my donors", "thank my
-  supporters", "write thank-you messages", "re-engage supporters", "post a
-  campaign update", "show impact", "write updates", "follow up with donors",
-  "follow up with attendees", "remind people to pay", or needs guidance on
-  turning donors, attendees, or members into advocates on PayIt2. Also
-  triggers on "donor retention", "supporter engagement", "gratitude messages",
-  "impact reporting", "attendee follow-up", "group reminders", or
-  "supporter CRM".
+description: Engage supporters on PayIt2. Use when user asks to thank donors, write thank-you messages, re-engage supporters, post campaign updates, show impact, follow up with donors or attendees, remind people to pay, or turn supporters into advocates.
 ---
 
 # Supporter Engagement

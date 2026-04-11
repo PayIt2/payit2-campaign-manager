@@ -1,14 +1,6 @@
 ---
 name: campaign-creation
-description: >
-  This skill should be used when the user asks to "create a campaign", "start a
-  fundraiser", "set up an event", "collect from my group", "write a campaign
-  story", "set up my PayIt2 page", "help me write my description", "optimize my
-  campaign title", "what should my goal be", "set up ticket tiers", "how should
-  I split costs", or needs guidance on building a campaign page for any type on
-  PayIt2. Also triggers on "campaign setup", "fundraiser page", "event page",
-  "story writing", "campaign description", "campaign goal", "create a page",
-  "ticket pricing", "cost split", or "new campaign".
+description: Create campaigns on PayIt2. Use when user asks to create a campaign, start a fundraiser, set up an event, collect from a group, write a campaign story, set up a PayIt2 page, write a description, optimize a title, set goals, set up ticket tiers, or split costs.
 ---
 
 # Campaign Creation

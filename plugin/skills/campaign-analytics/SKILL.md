@@ -1,14 +1,6 @@
 ---
 name: campaign-analytics
-description: >
-  This skill should be used when the user asks to "check my campaign health",
-  "how is my campaign doing", "analyze my performance", "why aren't I getting
-  donations", "why aren't tickets selling", "optimize my campaign", "what should
-  I do next", "campaign is stalled", or needs data-driven recommendations to
-  improve results for fundraisers, events, or group collections on PayIt2.
-  Also triggers on "campaign metrics", "conversion rate", "analytics",
-  "performance score", "campaign diagnosis", "event analytics", or
-  "campaign optimization".
+description: Analyze campaign health and performance on PayIt2. Use when user asks to check campaign health, analyze performance, diagnose why donations or tickets are slow, optimize a campaign, or get data-driven recommendations for fundraisers, events, or groups.
 ---
 
 # Campaign Analytics

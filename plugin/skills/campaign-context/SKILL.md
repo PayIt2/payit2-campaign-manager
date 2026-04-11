@@ -1,10 +1,6 @@
 ---
 name: campaign-context
-description: >
-  Shared context-gathering engine used by all Campaign Coach commands. Use when
-  starting any campaign interaction to determine campaign type and collect the
-  minimum information needed for the current task. Triggers automatically at the
-  start of every /campaign, /promote, /check-in, and /engage command.
+description: Shared context-gathering engine used by all Campaign Coach commands. Determines campaign type and collects minimum information needed for the current task. Triggers automatically at the start of /campaign, /promote, /check-in, and /engage.
 ---
 
 # Campaign Context

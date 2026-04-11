@@ -1,14 +1,6 @@
 ---
 name: campaign-promotion
-description: >
-  This skill should be used when the user asks to "promote my campaign", "share
-  my fundraiser", "promote my event", "create social media posts", "build a
-  content calendar", "schedule posts", "write emails for my campaign", "how do I
-  get more donations", "sell more tickets", "increase visibility", "campaign
-  marketing", "share my fundraiser", or needs multi-channel promotion guidance
-  for fundraisers, events, or groups on PayIt2. Also triggers on
-  "social media strategy", "campaign sharing", "email outreach", "press release",
-  "community posting", or "event promotion".
+description: Promote campaigns on PayIt2. Use when user asks to promote a campaign, share a fundraiser, create social media posts, build a content calendar, write campaign emails, get more donations, sell more tickets, or needs multi-channel promotion guidance.
 ---
 
 # Campaign Promotion
