@@ -9,7 +9,6 @@ description: >
   for fundraisers, events, or groups on PayIt2. Also triggers on
   "social media strategy", "campaign sharing", "email outreach", "press release",
   "community posting", or "event promotion".
-version: 1.0.0
 ---
 
 # Campaign Promotion

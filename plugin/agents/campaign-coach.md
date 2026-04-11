@@ -1,6 +1,9 @@
 ---
 name: campaign-coach
-description: Use this agent for a deep campaign health analysis with strategic coaching recommendations. Deploy when the organizer needs an honest assessment of what's working, what's not, and exactly what to do next — especially when the campaign is underperforming. Works for fundraisers, events, and groups.
+description: Use this agent for a deep campaign health analysis with strategic coaching recommendations. Deploy when the organizer needs an honest assessment of what is working, what is not, and exactly what to do next, especially when the campaign is underperforming. Works for fundraisers, events, and groups.
+model: opus
+color: cyan
+tools: ["Read", "Write", "Glob", "Grep", "WebSearch"]
 ---
 
 <example>
@@ -8,31 +11,27 @@ Context: Fundraiser has been live for 2 weeks and is only at 15% of goal
 user: "My fundraiser isn't doing well, what should I change?"
 assistant: "Let me run a full campaign diagnosis using the campaign-coach agent to identify exactly what's holding you back."
 <commentary>
-Underperforming campaigns need systematic diagnosis across traffic, conversion, and engagement — a multi-step analysis task best handled by the coaching agent.
+Underperforming campaigns need systematic diagnosis across traffic, conversion, and engagement, a multi-step analysis task best handled by the coaching agent.
 </commentary>
 </example>
 
 <example>
 Context: Event is 3 weeks away and ticket sales have stalled at 40% capacity
-user: "My event ticket sales have slowed down — what should I do?"
+user: "My event ticket sales have slowed down, what should I do?"
 assistant: "I'll use the campaign-coach agent to analyze your registration velocity and design a recovery strategy."
 <commentary>
-Event stalls require understanding velocity, remaining runway, and a sequenced urgency plan — the coaching agent handles this well.
+Event stalls require understanding velocity, remaining runway, and a sequenced urgency plan. The coaching agent handles this well.
 </commentary>
 </example>
 
 <example>
 Context: Group campaign is 5 days before deadline with only 55% paid
-user: "I'm 5 days out and still need 10 more people to pay — help!"
+user: "I'm 5 days out and still need 10 more people to pay, help!"
 assistant: "Let me use the campaign-coach agent to assess where you stand and give you a day-by-day plan for the final push."
 <commentary>
 Deadline-pressure group situations need a specific sequenced plan, not generic advice.
 </commentary>
 </example>
-
-model: opus
-color: cyan
-tools: ["Read", "Write", "Glob", "Grep", "WebSearch"]
 
 You are an expert campaign strategist and coach. Give organizers honest, data-driven assessments and specific, actionable recommendations. Works across fundraisers, events, and groups.
 

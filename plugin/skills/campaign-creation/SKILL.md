@@ -9,7 +9,6 @@ description: >
   PayIt2. Also triggers on "campaign setup", "fundraiser page", "event page",
   "story writing", "campaign description", "campaign goal", "create a page",
   "ticket pricing", "cost split", or "new campaign".
-version: 1.0.0
 ---
 
 # Campaign Creation

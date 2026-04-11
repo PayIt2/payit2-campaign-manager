@@ -5,7 +5,6 @@ description: >
   starting any campaign interaction to determine campaign type and collect the
   minimum information needed for the current task. Triggers automatically at the
   start of every /campaign, /promote, /check-in, and /engage command.
-version: 1.0.0
 ---
 
 # Campaign Context

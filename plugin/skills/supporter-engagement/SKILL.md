@@ -9,7 +9,6 @@ description: >
   triggers on "donor retention", "supporter engagement", "gratitude messages",
   "impact reporting", "attendee follow-up", "group reminders", or
   "supporter CRM".
-version: 1.0.0
 ---
 
 # Supporter Engagement

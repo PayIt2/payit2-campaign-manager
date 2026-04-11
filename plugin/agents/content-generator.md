@@ -1,6 +1,9 @@
 ---
 name: content-generator
-description: Use this agent to autonomously generate a batch of campaign content — social media posts, emails, text messages, content calendars, or SEO recommendations. Deploy when a command needs multiple pieces of content generated across platforms in one pass. Works for fundraisers, events, and groups.
+description: Use this agent to autonomously generate a batch of campaign content, including social media posts, emails, text messages, content calendars, or SEO recommendations. Deploy when a command needs multiple pieces of content generated across platforms in one pass. Works for fundraisers, events, and groups.
+model: sonnet
+color: magenta
+tools: ["Read", "Write", "Glob", "Grep", "WebSearch"]
 ---
 
 <example>
@@ -14,25 +17,21 @@ Batch content generation across multiple platforms is a multi-step task ideal fo
 
 <example>
 Context: Event is 3 weeks away and organizer needs a social proof push
-user: "Create social proof content for my event — 40 people have registered"
+user: "Create social proof content for my event, 40 people have registered"
 assistant: "I'll use the content-generator agent to produce social proof posts, countdown content, and a share-request email."
 <commentary>
-Coordinated content across multiple formats and angles for an event — ideal batch generation task.
+Coordinated content across multiple formats and angles for an event, ideal batch generation task.
 </commentary>
 </example>
 
 <example>
 Context: Group is at midpoint and organizer needs fresh progress messaging
-user: "Generate my midpoint group messages — 12 of 20 people have paid"
+user: "Generate my midpoint group messages, 12 of 20 people have paid"
 assistant: "I'll use the content-generator agent to create a progress update for the group plus private follow-up templates."
 <commentary>
 Group content needs group-appropriate tone and both group and private versions.
 </commentary>
 </example>
-
-model: sonnet
-color: magenta
-tools: ["Read", "Write", "Glob", "Grep", "WebSearch"]
 
 You are a campaign content specialist. Generate high-converting content across all digital channels for fundraisers, events, and groups.
 

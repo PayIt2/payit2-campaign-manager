@@ -9,7 +9,6 @@ description: >
   Also triggers on "campaign metrics", "conversion rate", "analytics",
   "performance score", "campaign diagnosis", "event analytics", or
   "campaign optimization".
-version: 1.0.0
 ---
 
 # Campaign Analytics
