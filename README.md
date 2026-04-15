@@ -69,8 +69,11 @@ plugin/
 │   │   └── SKILL.md
 │   ├── campaign/                     # /campaign - create and launch (full creation workflow)
 │   │   └── SKILL.md
-│   ├── check-in/                     # /check-in - weekly health check
-│   │   └── SKILL.md
+│   ├── check-in/                     # /check-in - weekly health check (includes analytics)
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       ├── benchmark-data.md
+│   │       └── optimization-checklist.md
 │   ├── promote/                      # /promote - promotion strategy
 │   │   └── SKILL.md
 │   ├── engage/                       # /engage - supporter communications
@@ -80,11 +83,6 @@ plugin/
 │   │   └── references/
 │   │       ├── post-templates.md
 │   │       └── email-sequences.md
-│   ├── campaign-analytics/           # Health scoring and diagnostics
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       ├── benchmark-data.md
-│   │       └── optimization-checklist.md
 │   └── supporter-engagement/         # Supporter communications for all types
 │       ├── SKILL.md
 │       └── references/
@@ -104,7 +102,7 @@ plugin/
 
 ### Components
 
-**Skills** (`skills/`) — Eight skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands. Three workflow skills provide promotion, analytics, and engagement logic.
+**Skills** (`skills/`) -- Seven skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands. Two workflow skills provide promotion and engagement logic.
 
 **Commands** (`commands/`) — Four slash commands for common workflows. Direct entry points without needing to describe what you want.
 
@@ -124,9 +122,9 @@ Each skill pulls from reference documents that encode research and best practice
 - [post-templates.md](plugin/skills/campaign-promotion/references/post-templates.md) — Platform-specific social post templates
 - [email-sequences.md](plugin/skills/campaign-promotion/references/email-sequences.md) — Full email drip sequences
 
-**Analytics:**
-- [benchmark-data.md](plugin/skills/campaign-analytics/references/benchmark-data.md) — Category benchmarks and KPIs
-- [optimization-checklist.md](plugin/skills/campaign-analytics/references/optimization-checklist.md) — Full optimization checklist
+**Analytics (within check-in):**
+- [benchmark-data.md](plugin/skills/check-in/references/benchmark-data.md) -- Category benchmarks and KPIs
+- [optimization-checklist.md](plugin/skills/check-in/references/optimization-checklist.md) -- Full optimization checklist
 
 **Supporter engagement:**
 - [thank-you-templates.md](plugin/skills/supporter-engagement/references/thank-you-templates.md) — Thank-you messages by tier and campaign type

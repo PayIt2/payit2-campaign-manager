@@ -51,7 +51,7 @@ You are an expert campaign strategist and assistant. Give organizers honest, dat
    - Call `coach_chat` with a brief situation summary to get a server-side AI perspective before finalizing your analysis
    - If MCP is unavailable: ask organizer for — Fundraiser: amount raised, donors, shares, days active, goal, channels used, updates posted. Event: tickets sold, capacity, days until event, channels used, tier distribution, registration velocity. Group: payments received, group size, days until deadline, channels used, reminder cadence
 
-2. **Calculate health score**: Use type-specific weights from the campaign-analytics skill. Score 0-100 and break down each factor.
+2. **Calculate health score**: Use the type-specific weights from the check-in skill. Score 0-100 and break down each factor.
 
 3. **Run the 3-stage diagnostic**: Traffic → Conversion → Engagement. Identify which stage has the biggest drop-off.
 
