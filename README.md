@@ -79,9 +79,7 @@ plugin/
 │   │   └── references/
 │   │       ├── post-templates.md
 │   │       └── email-sequences.md
-│   ├── engage/                       # /engage - supporter communications
-│   │   └── SKILL.md
-│   └── supporter-engagement/         # Supporter communications for all types
+│   └── engage/                       # /engage - supporter engagement (thank-yous, re-engagement, reminders)
 │       ├── SKILL.md
 │       └── references/
 │           ├── thank-you-templates.md
@@ -100,7 +98,7 @@ plugin/
 
 ### Components
 
-**Skills** (`skills/`) -- Six skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands. One workflow skill provides engagement logic.
+**Skills** (`skills/`) -- Five skills covering all campaign types. `campaign-context` is a shared context-gathering engine invoked by every command. Four user-facing skills map to the four commands.
 
 **Commands** (`commands/`) — Four slash commands for common workflows. Direct entry points without needing to describe what you want.
 
@@ -124,10 +122,10 @@ Each skill pulls from reference documents that encode research and best practice
 - [benchmark-data.md](plugin/skills/check-in/references/benchmark-data.md) -- Category benchmarks and KPIs
 - [optimization-checklist.md](plugin/skills/check-in/references/optimization-checklist.md) -- Full optimization checklist
 
-**Supporter engagement:**
-- [thank-you-templates.md](plugin/skills/supporter-engagement/references/thank-you-templates.md) — Thank-you messages by tier and campaign type
-- [update-templates.md](plugin/skills/supporter-engagement/references/update-templates.md) — Campaign update templates
-- [reminder-templates.md](plugin/skills/supporter-engagement/references/reminder-templates.md) — Group reminder cadences, re-engagement, and celebration templates
+**Supporter engagement (within engage):**
+- [thank-you-templates.md](plugin/skills/engage/references/thank-you-templates.md) -- Thank-you messages by tier and campaign type
+- [update-templates.md](plugin/skills/engage/references/update-templates.md) -- Campaign update templates
+- [reminder-templates.md](plugin/skills/engage/references/reminder-templates.md) -- Group reminder cadences, re-engagement, and celebration templates
 
 ### Research behind the plugin
 

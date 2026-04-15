@@ -8,12 +8,12 @@ Collection reminder cadence and re-engagement messages for all campaign types.
 
 Maximum 5-6 messages to the full group. Follow this sequence.
 
-### Message 1 — Launch (Day 0)
+### Message 1 - Launch (Day 0)
 
 **Group text / Slack:**
 > Hey everyone! Here's the link to pay for [purpose]: [LINK]. Total is $[amount] per person. Deadline is [date]. Thanks! 🙌
 
-**Email subject:** [Group Name] [Purpose] — Payment Link Inside
+**Email subject:** [Group Name] [Purpose] - Payment Link Inside
 > Hi everyone,
 >
 > Here's the link to pay your share for [purpose]: [LINK]
@@ -28,7 +28,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 
 ---
 
-### Message 2 — Progress Update (Day 3)
+### Message 2 - Progress Update (Day 3)
 
 **Group text / Slack:**
 > We're at [X]%! Thanks to everyone who's already paid 🎉 If you haven't yet, here's the link: [LINK]. Deadline: [date].
@@ -36,7 +36,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 **Email subject:** [X] people down, [Y] to go!
 > Hi everyone,
 >
-> Quick update: [X] of [Y] people have paid — we're [X]% of the way there!
+> Quick update: [X] of [Y] people have paid - we're [X]% of the way there!
 >
 > Thanks to everyone who's already taken care of it. If you haven't yet, here's the link: [LINK]
 >
@@ -46,33 +46,33 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 
 ---
 
-### Message 3 — Midpoint (Day 7 or halfway to deadline)
+### Message 3 - Midpoint (Day 7 or halfway to deadline)
 
 **Group text / Slack:**
 > Over halfway there! [X] of [Y] people have paid. If you haven't yet, here's the link: [LINK]
 
-**Email subject:** More than halfway — keep it going!
+**Email subject:** More than halfway - keep it going!
 > Hey everyone,
 >
 > We've crossed the halfway mark! [X] of [Y] people have paid so far.
 >
 > If you haven't had a chance yet: [LINK]
 >
-> Deadline is [date] — [real constraint reason].
+> Deadline is [date] - [real constraint reason].
 >
 > [Name]
 
 ---
 
-### Message 4 — Urgency (3 days before deadline)
+### Message 4 - Urgency (3 days before deadline)
 
 **Group text / Slack:**
-> Deadline is [date] — just [X] days away. We still need [Y] more people to pay so we can [book the venue / place the order / etc.]. Link: [LINK]
+> Deadline is [date] - just [X] days away. We still need [Y] more people to pay so we can [book the venue / place the order / etc.]. Link: [LINK]
 
-**Email subject:** [X] days left — we need your payment
+**Email subject:** [X] days left - we need your payment
 > Hi everyone,
 >
-> Our deadline is coming up fast — [date] is [X] days away.
+> Our deadline is coming up fast - [date] is [X] days away.
 >
 > We still need [Y] more people to pay before we can [book / order / confirm]. Here's the link: [LINK]
 >
@@ -83,7 +83,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 
 ---
 
-### Message 5 — Deadline Day
+### Message 5 - Deadline Day
 
 **Group text / Slack:**
 > Last day! We still need [X] more payments to hit our goal. Please pay today if you haven't: [LINK]
@@ -100,10 +100,10 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 
 ---
 
-### Message 6 — Post-Deadline Straggler (Private Only — never to full group)
+### Message 6 - Post-Deadline Straggler (Private Only - never to full group)
 
 **Personal text:**
-> Hey [Name]! Just following up on the [purpose] payment. We're finalizing things and just need your $[amount]. Here's the link: [LINK]. Hope everything's OK — let me know if you have any questions!
+> Hey [Name]! Just following up on the [purpose] payment. We're finalizing things and just need your $[amount]. Here's the link: [LINK]. Hope everything's OK - let me know if you have any questions!
 
 **Personal email subject:** Quick follow-up on [purpose] payment
 > Hi [Name],
@@ -112,7 +112,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 >
 > Here's the link: [LINK]
 >
-> If there's an issue or you need more time, just let me know — happy to work something out.
+> If there's an issue or you need more time, just let me know - happy to work something out.
 >
 > [Name]
 
@@ -150,7 +150,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 **Subject:** Still time to grab your ticket for [Event Name]
 > Hi [Name],
 >
-> You checked out [Event Name] but didn't grab a ticket yet — just wanted to make sure you didn't miss out.
+> You checked out [Event Name] but didn't grab a ticket yet - just wanted to make sure you didn't miss out.
 >
 > [1-2 sentences about what makes the event special.]
 >
@@ -161,7 +161,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 > [Name]
 
 ### Last Chance to Bring a Friend (to registered attendees)
-**Email subject:** Bring someone to [Event Name] — a few spots left
+**Email subject:** Bring someone to [Event Name] - a few spots left
 > Hi [Name],
 >
 > Excited to see you at [Event Name]!
@@ -175,17 +175,17 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 
 ## Collection Celebration Templates
 
-### Goal Reached — Group Announcement
+### Goal Reached - Group Announcement
 **Group text / Slack:**
-> WE DID IT! 🎉 Everyone has paid and we've hit our goal. [What happens next: "Booking the cabin now!" / "Ordering jerseys this week!" / etc.] Thanks to everyone — this is going to be amazing!
+> WE DID IT! 🎉 Everyone has paid and we've hit our goal. [What happens next: "Booking the cabin now!" / "Ordering jerseys this week!" / etc.] Thanks to everyone - this is going to be amazing!
 
-**Email subject:** Goal reached — thank you all!
+**Email subject:** Goal reached - thank you all!
 > Hi everyone,
 >
 > We've hit our goal! 🎉 All payments are in and we're moving forward with [booking/ordering/planning].
 >
 > [What happens next and timeline.]
 >
-> Thank you all — this wouldn't happen without everyone pulling together.
+> Thank you all - this wouldn't happen without everyone pulling together.
 >
 > [Name]

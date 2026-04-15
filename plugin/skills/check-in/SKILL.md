@@ -93,7 +93,7 @@ Run through all 3 diagnostic stages:
 - Event: attendee-to-sharer ratio (target: 1 in 5), re-share content posted
 - Group: did paying members bring peer pressure? Are unpaid members responding to reminders?
 
-**If conversion is fine but growth has stalled**: Problem is engagement loop. Reference supporter-engagement skill.
+**If conversion is fine but growth has stalled**: Problem is engagement loop. Reference the engage skill.
 
 Name the primary bottleneck clearly.
 
