@@ -15,5 +15,5 @@ mkdir -p "$DATA_DIR"
 DATE=$(date +%Y-%m-%d-%H%M)
 OUTFILE="$DATA_DIR/session-$DATE.md"
 
-printf "# Campaign Coaching Session — %s\n\n%s\n" "$DATE" "$SUMMARY" > "$OUTFILE"
+printf "# Campaign Assistance Session — %s\n\n%s\n" "$DATE" "$SUMMARY" > "$OUTFILE"
 echo "Session summary saved: $OUTFILE"

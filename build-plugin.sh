@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build the Claude plugin zip from the plugin/ folder.
-# Output: payit2-campaign-coach.zip in the repo root.
+# Output: payit2-campaign-assistant.zip in the repo root.
 #
 # Usage:
 #   ./build-plugin.sh
@@ -12,7 +12,7 @@ set -e
 
 cd "$(dirname "$0")"
 
-ZIP_NAME="payit2-campaign-coach.zip"
+ZIP_NAME="payit2-campaign-assistant.zip"
 
 # Remove old zip
 rm -f "$ZIP_NAME"

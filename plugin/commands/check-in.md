@@ -20,7 +20,7 @@ Follow this diagnostic workflow:
    - Event: registration velocity 25%, capacity utilization 20%, promotion reach 20%, engagement 15%, revenue 10%, logistics 10%
    - Collection: payment rate 30%, deadline proximity 20%, communication cadence 20%, response rate 15%, transparency 15%
 
-   Present the score with a factor-by-factor breakdown. If score is below 60, dispatch the campaign-coach agent for deep analysis.
+   Present the score with a factor-by-factor breakdown. If score is below 60, dispatch the campaign-assistant agent for deep analysis.
 
 3. **Diagnose the Bottleneck**: Run the 3-stage diagnostic:
    - Stage 1: Is it a traffic problem? (Are people seeing the campaign?)

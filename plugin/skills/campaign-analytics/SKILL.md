@@ -46,8 +46,8 @@ Calculate a 0-100 health score using type-specific weights:
 |-------|--------|--------|
 | 80-100 | Thriving | Maintain cadence, expand to new channels |
 | 60-79 | Healthy | Address 1-2 weak areas, increase promotion |
-| 40-59 | At risk | Significant changes needed — dispatch campaign-coach agent |
-| 20-39 | Critical | Major intervention — dispatch campaign-coach agent |
+| 40-59 | At risk | Significant changes needed — dispatch campaign-assistant agent |
+| 20-39 | Critical | Major intervention — dispatch campaign-assistant agent |
 | 0-19 | Stalled | Consider relaunch or pivot |
 
 ## Diagnostic Framework

@@ -13,7 +13,7 @@ set -e
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 MARKETPLACE_DIR="$REPO_DIR/../payit2-plugins-marketplace"
-ZIP_NAME="payit2-campaign-coach.zip"
+ZIP_NAME="payit2-campaign-assistant.zip"
 
 VERSION="${1}"
 TITLE="${2}"
@@ -59,7 +59,7 @@ fi
 git push
 
 echo ""
-echo "==> Creating GitHub release $VERSION on payit2-campaign-coach..."
+echo "==> Creating GitHub release $VERSION on payit2-campaign-assistant..."
 gh release create "$VERSION" "$ZIP_NAME" \
   --title "$TITLE" \
   --notes "$NOTES"
@@ -69,7 +69,7 @@ echo "==> Syncing plugin files to marketplace..."
 rsync -av --delete \
   --exclude='.DS_Store' \
   "$REPO_DIR/plugin/" \
-  "$MARKETPLACE_DIR/payit2-campaign-coach/"
+  "$MARKETPLACE_DIR/payit2-campaign-assistant/"
 
 echo ""
 echo "==> Committing and pushing marketplace repo..."
@@ -78,7 +78,7 @@ git add -A
 if git diff --cached --quiet; then
   echo "    (nothing to commit in marketplace)"
 else
-  git commit -m "release: sync payit2-campaign-coach $VERSION"
+  git commit -m "release: sync payit2-campaign-assistant $VERSION"
 fi
 git push
 
@@ -92,5 +92,5 @@ rm "$MARKETPLACE_DIR/$ZIP_NAME"
 
 echo ""
 echo "Done! Released $VERSION to both repos."
-echo "  https://github.com/PayIt2/payit2-campaign-coach/releases/tag/$VERSION"
+echo "  https://github.com/PayIt2/payit2-campaign-assistant/releases/tag/$VERSION"
 echo "  https://github.com/PayIt2/payit2-plugins-marketplace/releases/tag/$VERSION"

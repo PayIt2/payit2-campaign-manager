@@ -8,7 +8,7 @@ All org-wide rules (security, testing, AWS, notifications, images, git workflow,
 
 # CLAUDE.md
 
-This repo is the PayIt2 Campaign Coach plugin for Claude Code.
+This repo is the PayIt2 Campaign Assistant plugin for Claude Code.
 
 ## Structure
 
@@ -29,7 +29,7 @@ plugin/
     promote.md                    # /promote - promotion strategy
     engage.md                     # /engage - supporter communications
   agents/                       # 3 autonomous agents
-    campaign-coach.md             # Deep campaign health analysis
+    campaign-assistant.md             # Deep campaign health analysis and strategy
     content-generator.md          # Batch content generation
     supporter-outreach.md         # Personalized supporter comms
 ```
@@ -44,7 +44,7 @@ After editing files in `plugin/`, rebuild the zip:
 ./build-plugin.sh
 ```
 
-This creates `payit2-campaign-coach.zip` in the repo root. Upload it to Claude via Settings > Plugins > Update.
+This creates `payit2-campaign-assistant.zip` in the repo root. Upload it to Claude via Settings > Plugins > Update.
 
 ## Git Workflow
 

@@ -1,6 +1,6 @@
-# PayIt2 Campaign Coach
+# PayIt2 Campaign Assistant
 
-> An AI plugin for Claude that helps you run fundraisers, events, and groups on PayIt2. Create campaigns, sell tickets, collect payments from groups, generate promotion content, engage supporters, and optimize performance — all through natural conversation.
+> An AI plugin for Claude that helps you run fundraisers, events, and groups on PayIt2. Create campaigns, sell tickets, collect payments from groups, generate promotion content, engage supporters, and optimize performance - all through natural conversation.
 
 **Works with:** [Claude desktop app](https://claude.ai/download) (free) · Claude Code CLI
 
@@ -11,7 +11,7 @@
 This plugin works inside **Claude**, Anthropic's free AI assistant. You don't need any technical experience to use it.
 
 1. Download the free [Claude desktop app](https://claude.ai/download) — or open [payit2.com](https://www.payit2.com) and start a campaign there
-2. In Claude, type `/plugin`, go to the **Discover** tab, and search for **PayIt2 Campaign Coach**
+2. In Claude, type `/plugin`, go to the **Discover** tab, and search for **PayIt2 Campaign Assistant**
 3. Click **Install**
 4. Say *"Help me create a fundraising campaign"* and Claude will guide you from there
 
@@ -49,13 +49,13 @@ This is a [Claude Code plugin](https://code.claude.com/docs/en/plugins) — a se
 ### Install in Claude Code
 
 ```bash
-git clone https://github.com/PayIt2/payit2-campaign-coach.git
+git clone https://github.com/PayIt2/payit2-campaign-assistant.git
 
 # Load for a single session
-claude --plugin-dir ./payit2-campaign-coach/plugin
+claude --plugin-dir ./payit2-campaign-assistant/plugin
 
 # Or install to your user scope permanently
-claude plugin install payit2-campaign-coach@marketplace
+claude plugin install payit2-campaign-assistant@marketplace
 ```
 
 ### Directory layout
@@ -96,7 +96,7 @@ plugin/
 │   ├── check-in.md                   # Health check and diagnosis
 │   └── engage.md                     # Supporter communications
 └── agents/
-    ├── campaign-coach.md             # Opus  — deep strategy and rescue coaching
+    ├── campaign-assistant.md         # Opus  — deep strategy and campaign analysis
     ├── content-generator.md          # Sonnet — batch content across all platforms
     └── supporter-outreach.md         # Sonnet — personalized supporter comms at scale
 ```

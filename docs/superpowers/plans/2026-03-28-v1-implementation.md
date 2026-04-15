@@ -1,8 +1,8 @@
-# Campaign Coach v1.0.0 Implementation Plan
+# Campaign Assistant v1.0.0 Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Rebuild the Campaign Coach plugin from fundraising-first to a unified platform supporting fundraisers, events, and group collections across all commands, skills, and agents.
+**Goal:** Rebuild the Campaign Assistant plugin from fundraising-first to a unified platform supporting fundraisers, events, and group collections across all commands, skills, and agents.
 
 **Architecture:** 4 unified commands → 5 type-adaptive skills → 3 agents. Every component branches on campaign type internally rather than having separate type-specific components. A new `campaign-context` skill handles all context-gathering conversationally (no MCP this release).
 
@@ -36,7 +36,7 @@
 - `plugin/skills/supporter-engagement/SKILL.md`
 - `plugin/skills/supporter-engagement/references/thank-you-templates.md`
 - `plugin/skills/supporter-engagement/references/update-templates.md`
-- `plugin/agents/campaign-coach.md`
+- `plugin/agents/campaign-assistant.md`
 - `plugin/agents/content-generator.md`
 - `plugin/.claude-plugin/plugin.json`
 
@@ -67,7 +67,7 @@
 ---
 name: campaign-context
 description: >
-  Shared context-gathering engine used by all Campaign Coach commands. Use when
+  Shared context-gathering engine used by all Campaign Assistant commands. Use when
   starting any campaign interaction to determine campaign type and collect the
   minimum information needed for the current task. Triggers automatically at the
   start of every /campaign, /promote, /check-in, and /engage command.
@@ -145,7 +145,7 @@ Expected: file listed.
 - [ ] **Step 3: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/skills/campaign-context/SKILL.md
 git commit -m "feat: add campaign-context skill — shared context-gathering engine"
 ```
@@ -354,7 +354,7 @@ Keep it under 100 words. Collections are transactional — clarity beats storyte
 - [ ] **Step 2: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/skills/campaign-creation/SKILL.md
 git commit -m "feat: rewrite campaign-creation skill for all campaign types"
 ```
@@ -550,7 +550,7 @@ If the deadline passes and you're short:
 - [ ] **Step 3: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/skills/campaign-creation/references/ticket-strategy.md
 git add plugin/skills/campaign-creation/references/cost-splitting-guide.md
 git commit -m "feat: add ticket-strategy and cost-splitting-guide to campaign-creation"
@@ -755,7 +755,7 @@ Rotate through these 8 angles to keep promotion fresh (all types have equivalent
 - [ ] **Step 2: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/skills/campaign-promotion/SKILL.md
 git commit -m "feat: rewrite campaign-promotion skill as unified engine for all types"
 ```
@@ -827,8 +827,8 @@ Calculate a 0-100 health score using type-specific weights:
 |-------|--------|--------|
 | 80-100 | Thriving | Maintain cadence, expand to new channels |
 | 60-79 | Healthy | Address 1-2 weak areas, increase promotion |
-| 40-59 | At risk | Significant changes needed — dispatch campaign-coach agent |
-| 20-39 | Critical | Major intervention — dispatch campaign-coach agent |
+| 40-59 | At risk | Significant changes needed — dispatch campaign-assistant agent |
+| 20-39 | Critical | Major intervention — dispatch campaign-assistant agent |
 | 0-19 | Stalled | Consider relaunch or pivot |
 
 ## Diagnostic Framework
@@ -919,7 +919,7 @@ When an organizer asks "why isn't this working?" run through all 3 stages:
 - [ ] **Step 2: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/skills/campaign-analytics/SKILL.md
 git commit -m "feat: rewrite campaign-analytics skill with type-adaptive health scoring"
 ```
@@ -1271,7 +1271,7 @@ Maximum 5-6 messages to the full group. Follow this sequence.
 - [ ] **Step 3: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/skills/supporter-engagement/SKILL.md
 git add plugin/skills/supporter-engagement/references/reminder-templates.md
 git commit -m "feat: rewrite supporter-engagement skill + add reminder-templates for all types"
@@ -1395,7 +1395,7 @@ Follow this diagnostic workflow:
    - Event: registration velocity 25%, capacity utilization 20%, promotion reach 20%, engagement 15%, revenue 10%, logistics 10%
    - Collection: payment rate 30%, deadline proximity 20%, communication cadence 20%, response rate 15%, transparency 15%
 
-   Present the score with a factor-by-factor breakdown. If score is below 60, dispatch the campaign-coach agent for deep analysis.
+   Present the score with a factor-by-factor breakdown. If score is below 60, dispatch the campaign-assistant agent for deep analysis.
 
 3. **Diagnose the Bottleneck**: Run the 3-stage diagnostic:
    - Stage 1: Is it a traffic problem? (Are people seeing the campaign?)
@@ -1471,7 +1471,7 @@ Follow this workflow:
 - [ ] **Step 5: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/commands/campaign.md plugin/commands/promote.md
 git add plugin/commands/check-in.md plugin/commands/engage.md
 git commit -m "feat: add 4 unified commands — campaign, promote, check-in, engage"
@@ -1479,23 +1479,23 @@ git commit -m "feat: add 4 unified commands — campaign, promote, check-in, eng
 
 ---
 
-## Task 8: Rewrite campaign-coach agent
+## Task 8: Rewrite campaign-assistant agent
 
 **Files:**
-- Modify: `plugin/agents/campaign-coach.md`
+- Modify: `plugin/agents/campaign-assistant.md`
 
 - [ ] **Step 1: Overwrite the file**
 
 ```markdown
 ---
-name: campaign-coach
+name: campaign-assistant
 description: Use this agent for a deep campaign health analysis with strategic coaching recommendations. Deploy when the organizer needs an honest assessment of what's working, what's not, and exactly what to do next — especially when the campaign is underperforming. Works for fundraisers, events, and group collections.
 ---
 
 <example>
 Context: Fundraiser has been live for 2 weeks and is only at 15% of goal
 user: "My fundraiser isn't doing well, what should I change?"
-assistant: "Let me run a full campaign diagnosis using the campaign-coach agent to identify exactly what's holding you back."
+assistant: "Let me run a full campaign diagnosis using the campaign-assistant agent to identify exactly what's holding you back."
 <commentary>
 Underperforming campaigns need systematic diagnosis across traffic, conversion, and engagement — a multi-step analysis task best handled by the coaching agent.
 </commentary>
@@ -1504,7 +1504,7 @@ Underperforming campaigns need systematic diagnosis across traffic, conversion, 
 <example>
 Context: Event is 3 weeks away and ticket sales have stalled at 40% capacity
 user: "My event ticket sales have slowed down — what should I do?"
-assistant: "I'll use the campaign-coach agent to analyze your registration velocity and design a recovery strategy."
+assistant: "I'll use the campaign-assistant agent to analyze your registration velocity and design a recovery strategy."
 <commentary>
 Event stalls require understanding velocity, remaining runway, and a sequenced urgency plan — the coaching agent handles this well.
 </commentary>
@@ -1513,7 +1513,7 @@ Event stalls require understanding velocity, remaining runway, and a sequenced u
 <example>
 Context: Group collection is 5 days before deadline with only 55% paid
 user: "I'm 5 days out and still need 10 more people to pay — help!"
-assistant: "Let me use the campaign-coach agent to assess where you stand and give you a day-by-day plan for the final push."
+assistant: "Let me use the campaign-assistant agent to assess where you stand and give you a day-by-day plan for the final push."
 <commentary>
 Deadline-pressure collection situations need a specific sequenced plan, not generic advice.
 </commentary>
@@ -1572,9 +1572,9 @@ Present the analysis as a structured coaching report:
 - [ ] **Step 2: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
-git add plugin/agents/campaign-coach.md
-git commit -m "feat: rewrite campaign-coach agent for all campaign types"
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
+git add plugin/agents/campaign-assistant.md
+git commit -m "feat: rewrite campaign-assistant agent for all campaign types"
 ```
 
 ---
@@ -1768,7 +1768,7 @@ When generating event attendee communications, produce the full journey:
 - [ ] **Step 3: Commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add plugin/agents/content-generator.md plugin/agents/supporter-outreach.md
 git commit -m "feat: rewrite content-generator agent + add supporter-outreach agent"
 ```
@@ -1794,7 +1794,7 @@ git commit -m "feat: rewrite content-generator agent + add supporter-outreach ag
 - [ ] **Step 1: Delete all obsolete files**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 rm -rf plugin/skills/event-management
 rm -rf plugin/skills/group-collection
 rm plugin/commands/launch-fundraiser.md
@@ -1817,7 +1817,7 @@ find plugin -type f | sort
 Expected output — only v1.0.0 files:
 ```
 plugin/.claude-plugin/plugin.json
-plugin/agents/campaign-coach.md
+plugin/agents/campaign-assistant.md
 plugin/agents/content-generator.md
 plugin/agents/supporter-outreach.md
 plugin/commands/campaign.md
@@ -1845,7 +1845,7 @@ plugin/skills/supporter-engagement/references/update-templates.md
 - [ ] **Step 3: Commit deletions**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 git add -A
 git commit -m "chore: remove v0.2.0 components replaced by v1.0.0 unified architecture"
 ```
@@ -1863,9 +1863,9 @@ Replace the entire file contents with:
 
 ```json
 {
-  "name": "payit2-campaign-coach",
+  "name": "payit2-campaign-assistant",
   "version": "1.0.0",
-  "description": "AI-powered campaign coach for PayIt2.com — create, promote, and optimize any campaign type: fundraisers, events, and group collections. Get coaching, generate content, and engage supporters through conversation with Claude.",
+  "description": "AI-powered campaign assistant for PayIt2.com — create, promote, and optimize any campaign type: fundraisers, events, and group collections. Get coaching, generate content, and engage supporters through conversation with Claude.",
   "author": {
     "name": "Brian Anderson, PayIt2 Founder"
   },
@@ -1876,24 +1876,24 @@ Replace the entire file contents with:
 - [ ] **Step 2: Rebuild the zip**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
 ./build-plugin.sh
 ```
-Expected: `payit2-campaign-coach.zip` created/updated in repo root.
+Expected: `payit2-campaign-assistant.zip` created/updated in repo root.
 
 - [ ] **Step 3: Verify the zip contains the right files**
 
 ```bash
-unzip -l payit2-campaign-coach.zip | grep -v "__MACOSX" | sort
+unzip -l payit2-campaign-assistant.zip | grep -v "__MACOSX" | sort
 ```
 Expected: all v1.0.0 files listed, no v0.2.0 files (no event-management, group-collection, launch-fundraiser, plan-event, collect-from-group, boost-campaign, thank-donors, weekly-checkin, donor-outreach, event-promoter, group-collector, seo-optimizer).
 
 - [ ] **Step 4: Final commit**
 
 ```bash
-cd /Users/briananderson/Source/PayIt2/payit2-campaign-coach
-git add plugin/.claude-plugin/plugin.json payit2-campaign-coach.zip
-git commit -m "release: Campaign Coach v1.0.0 — unified architecture for fundraisers, events, and collections"
+cd /Users/briananderson/Source/PayIt2/payit2-campaign-assistant
+git add plugin/.claude-plugin/plugin.json payit2-campaign-assistant.zip
+git commit -m "release: Campaign Assistant v1.0.0 — unified architecture for fundraisers, events, and collections"
 git push
 ```
 
@@ -1909,7 +1909,7 @@ git push
 - ✅ campaign-analytics rewrite — Task 5
 - ✅ supporter-engagement rewrite + reminder-templates.md — Task 6
 - ✅ 4 new commands — Task 7
-- ✅ campaign-coach agent rewrite — Task 8
+- ✅ campaign-assistant agent rewrite — Task 8
 - ✅ content-generator rewrite + supporter-outreach new — Task 9
 - ✅ Delete obsolete files — Task 10
 - ✅ plugin.json v1.0.0 + rebuild zip — Task 11

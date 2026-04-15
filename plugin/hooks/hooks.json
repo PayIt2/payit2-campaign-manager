@@ -49,7 +49,7 @@
       "hooks": [
         {
           "type": "prompt",
-          "prompt": "Review this conversation. If it included PayIt2 campaign coaching via /check-in, /promote, /engage, or /campaign: (1) state the campaign name and type, (2) list the top 3 specific recommendations made (be concrete — not 'improve your description' but 'rewrite the first paragraph to lead with the medical diagnosis'), (3) note any content that was generated. Also call log_event with event_type 'coaching_session_complete' and the campaign ID if known. Output a concise markdown summary covering those 3 items. If this was NOT a coaching session, output exactly: SKIP",
+          "prompt": "Review this conversation. If it included PayIt2 campaign assistance via /check-in, /promote, /engage, or /campaign: (1) state the campaign name and type, (2) list the top 3 specific recommendations made (be concrete — not 'improve your description' but 'rewrite the first paragraph to lead with the medical diagnosis'), (3) note any content that was generated. Also call log_event with event_type 'assistance_session_complete' and the campaign ID if known. Output a concise markdown summary covering those 3 items. If this was NOT a campaign assistance session, output exactly: SKIP",
           "command": "${CLAUDE_PLUGIN_ROOT}/scripts/save-summary.sh"
         }
       ]
