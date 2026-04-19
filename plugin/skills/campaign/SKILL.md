@@ -272,7 +272,17 @@ After completing Steps 1-7:
 
    Save the campaign ID and URL from the response.
 
-3. **Upload cover image (if available).** If the organizer provides an image (file path or pasted image), call `upload_campaign_image` with the `campaignId` and the base64-encoded image data. Supported formats: JPEG, PNG, WebP.
+3. **Upload cover image (if available).** The `upload_campaign_image` tool needs base64-encoded image bytes. How you get there depends on how the organizer shared the image:
+
+   - **File path on disk** (e.g. `~/Downloads/hero.jpg`): run `base64 -i <path> | tr -d '\n'` via Bash, capture the output, pass it as `imageBase64`. Set `mimeType` based on the extension (JPEG, PNG, or WebP).
+   - **Public URL** (Slack CDN, Google Drive share link, S3, any hosted image): if the MCP tool supports `imageUrl`, pass the URL directly. Otherwise, `curl -sL <url> -o /tmp/campaign-hero.<ext>` then base64-encode as above.
+   - **Inline image pasted in chat:** you can see it visually but the bytes are NOT on disk and NOT accessible to you. Do not silently skip it. Tell the organizer exactly one of:
+     1. "Drag the image from this chat to your Downloads folder and tell me the filename."
+     2. "If it's already hosted anywhere (Slack, Drive, a website), paste the URL."
+
+     Then proceed with whichever path they choose. Never claim the image was uploaded when it wasn't.
+
+   After a successful upload, confirm the image is attached and mention it in the final recap.
 
 4. **Save the campaign story.** Use the `campaign_story` prompt to generate a polished story, then call `save_campaign_story` with the campaign ID to persist it.
 
