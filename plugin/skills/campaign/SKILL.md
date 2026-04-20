@@ -37,8 +37,10 @@ Ask questions one at a time, building on each answer. Adapt to the campaign type
 1. **What type of event is it?** Category (conference, party, concert, reunion, etc.) and brief description.
 2. **When and where?** Date, start/end time, timezone, venue name and address (or virtual platform).
 3. **What's the capacity?** Max attendees. Separate by tier if applicable.
-4. **What will attendees experience?** Agenda, speakers, activities, food/drink, entertainment.
-5. **What do attendees need to know?** Dress code, what to bring, accessibility, age restrictions, refund policy.
+4. **Is there a registration deadline?** Date after which no new registrations are accepted. Many events set this 24-48 hours before the event.
+5. **Is it free or paid?** If paid: ticket prices and tiers. If free: confirm attendees just RSVP at no charge.
+6. **What will attendees experience?** Agenda, speakers, activities, food/drink, entertainment.
+7. **What do attendees need to know?** Dress code, what to bring, accessibility, age restrictions, refund policy.
 
 ### Group Interview
 1. **What's the collection for?** Specific purpose: team jerseys, cabin rental, birthday gift, club dues, etc.
@@ -156,6 +158,10 @@ Recommend a goal amount using these guidelines and explain the reasoning.
 | Regular | Base price | Standard access |
 | VIP/Premium | 50-100% above regular | Priority access, perks, exclusivity |
 
+**Free events:** Use a single $0 option (e.g., "Free RSVP" or "General Admission — Free"). Attendees complete registration without entering payment info.
+
+**Add-ons:** Items like T-shirts, parking, or meal upgrades should be separate options with `pick_any` so attendees can add them independently.
+
 Present a pricing table for the user's event.
 
 ### Group Cost Models
@@ -183,7 +189,8 @@ Run through the type-specific checklist below. Flag anything missing.
 ### Event
 - [ ] Date, time, and timezone are correct
 - [ ] Location is complete with address and directions
-- [ ] All ticket tiers configured with correct prices and capacities
+- [ ] All ticket tiers configured with correct prices and capacities (free options use $0)
+- [ ] Registration deadline set if applicable
 - [ ] Description under 200 words with hook-details-CTA structure
 - [ ] Hero image uploaded and looks good at thumbnail size
 - [ ] Payment processing connected and tested
@@ -201,9 +208,9 @@ Run through the type-specific checklist below. Flag anything missing.
 
 ## Step 8: Create the Campaign on PayIt2
 
-If the PayIt2 MCP server is connected, use `create_campaign` to create the campaign directly on PayIt2 with the finalized title, mode, description, and goal. Confirm with the organizer and share the campaign ID returned.
+If the PayIt2 MCP server is connected, follow the MCP-Enhanced Flow below. This creates the campaign, its ticket options, registration deadline, and cover image in one session — no manual setup required.
 
-If MCP is not connected, direct the organizer to sign up or log in at payit2.com to create their campaign. Share the finalized title, description, and goal so they can paste it in when setting up their campaign page on PayIt2.
+If MCP is not connected, direct the organizer to sign up or log in at payit2.com to create their campaign. Share the finalized title, description, goal, and pricing so they can paste it in when setting up their campaign page on PayIt2.
 
 ---
 
@@ -240,6 +247,88 @@ If MCP is not available, complete Steps 1-7 as normal, then at Step 8 direct the
 After completing Steps 1-7:
 
 1. **Ask for confirmation.** "Ready to create this campaign on your PayIt2 account?"
-2. **Create the campaign.** Call `create_campaign` with the finalized title, mode (`fundraiser`, `registration`, or `group_payment`), description, and goal amount. Save the returned campaign ID.
-3. **Save the campaign story.** Use the `campaign_story` prompt to generate a polished story, then call `save_campaign_story` with the campaign ID to persist it.
-4. **Confirm success.** Let the organizer know their campaign is live as a draft on PayIt2 and remind them to add a photo and review before sharing.
+
+2. **Create the campaign.** Call `create_campaign` with all finalized details. Always include:
+   - `title`, `mode`, `description`, `blurb`
+   - `publish` (default `false` — creates as draft)
+
+   Add these based on campaign type:
+
+   **Fundraiser:**
+   - `goalAmount` (dollars)
+
+   **Event (registration):**
+   - `eventStartDate`, `eventEndDate` (ISO 8601)
+   - `eventVenueName`, `eventAddress`, `eventCity`, `eventState`, `eventZipCode`
+   - `registrationDeadline` (ISO 8601) if a cutoff date was set
+   - `options` — build from the ticket tiers decided in Step 6:
+     - Ticket tiers go in a group: `groupTitle: "Tickets"`, `groupMode: "pick_one"`, `isRequired: true`
+     - Free RSVP: `{ title: "General Admission", amount: 0, groupTitle: "Tickets", groupMode: "pick_one", isRequired: true }`
+     - Add-ons (T-shirt, parking, meal): separate group with `groupMode: "pick_any"`, `isRequired: false`
+     - **Platform note:** PayIt2 renders a built-in quantity selector for every option. Do NOT add `questions` to collect quantity for options (e.g. "How many Medium T-shirts?") — this creates redundant fields. Only use questions for information the option selector cannot capture (e.g. size preferences, names, dietary restrictions).
+
+   **Options vs. Questions — best practices:**
+
+   Default to **options** whenever the organizer needs to count or select something. Questions are for open-ended or personal information only.
+
+   | Use an **option** when… | Use a **question** when… |
+   |------------------------|--------------------------|
+   | Counting people — adults, kids, guests | Collecting names of guests coming |
+   | Selecting an item — t-shirt size, meal choice, parking pass | Dietary restrictions or food allergies |
+   | Choosing a tier — VIP, General, Student | Special accommodations or accessibility needs |
+   | Any add-on with a quantity — extra shirts, extra tickets | Free-form comments or notes |
+   | Anything you'd phrase as "how many X" or "which X" | Anything you'd phrase as "tell me about X" |
+
+   Apply this heuristic during the interview (Steps 2–3): whenever the organizer mentions counting people or selecting items, propose an option group — not a question. Reserve questions for the information that genuinely can't be expressed as a checkbox or quantity.
+
+   **T-shirt example:** Use one option per size (Small, Medium, Large, XL, 2XL) at $20 each in a `pick_any` group — attendees use the quantity selector. Do not ask "What size and how many?" as a question.
+
+   **Attendee count example:** Use "Adult" and "Child" as free ($0) options in a `pick_any` group called "Who's Coming?" — attendees use the quantity selector. Do not ask "How many adults/kids?" as a question.
+
+   - `questions` — use sparingly. One question per distinct piece of information needed. Never add two questions that ask for the same thing (e.g. do not add both "Who will be attending?" and "Who will be coming with you?" — pick one). If adding questions in multiple calls, call `list_campaign_questions` first to see what already exists and avoid duplicates.
+
+3. **Managing existing questions.** The MCP provides three tools for question management after creation:
+   - `list_campaign_questions` — returns all questions with their IDs. Always call this before updating or deleting.
+   - `delete_campaign_question` — removes a question by ID.
+   - `update_campaign_question` — edits question text, type, choices, or option binding by ID. Supports `paymentOptionTitle` for re-linking.
+
+   **Group payment:**
+   - `goalAmount` (total needed)
+   - `options` — use for tiered amounts (room types, meal choices, activity levels). Standalone if just one price.
+
+   Save the campaign ID and URL from the response.
+
+3. **Upload cover image (if available).** The `upload_campaign_image` tool accepts either `imageUrl` (preferred) or `imageBase64`. Always prefer `imageUrl` - base64 payloads blow past the ~25K token Read limit for anything above ~300KB, while any public URL is fetched server-side with no size penalty.
+
+   **Before you upload, verify the source is actually high-resolution:**
+   ```bash
+   sips -g pixelWidth -g pixelHeight "<file>"
+   ```
+   File size is a misleading proxy for photos. An iMessage/AirDrop preview can be 600KB+ on disk but only 640×480 pixels - PNG lossless compression bloats the byte count without adding detail. If dimensions are under ~1600 wide, ask the organizer for the original (Photos > File > Export > Export Unmodified Original, or the full-size version from iCloud). Multiple `IMG_1234.png`, `IMG_1234 (1).png`, `IMG_1234 (2).png` in Downloads often means the biggest number is the full-res.
+
+   **Pre-crop to the display aspect ratio (3:1) before upload.** Event/fund/group cover containers on the public page are `aspect-[3/1]` with `object-cover`. A 4:3 or 16:9 source loses 40-55% of its pixels to the center-strip crop and has to scale up to fill the wider container, which looks soft. Cropping to 3:1 up front preserves composition and keeps every pixel on screen. Use Python/PIL for offset crops (sips only crops centered):
+   ```python
+   from PIL import Image
+   img = Image.open('source.png')
+   W, H = img.size
+   target_h = W // 3
+   y0 = max(0, (H - target_h) // 2 - 200)  # bias slightly toward top to keep sky
+   img.crop((0, y0, W, y0 + target_h)).convert('RGB').save('cover.jpg', 'JPEG', quality=92, optimize=True)
+   ```
+
+   **Pathways by how the image was shared:**
+   - **File path on disk** (e.g. `~/Downloads/hero.jpg`): verify dimensions, pre-crop, then push the result to a temp location the MCP can fetch (a public GitHub raw URL works well - use the `payit2-plugins-marketplace` repo's `tmp-assets/` folder, then clean up with a follow-up commit). Pass as `imageUrl`. Only fall back to `imageBase64` if the file is already under ~300KB.
+   - **Public URL** (Slack CDN, Google Drive share link, S3): pass directly as `imageUrl`, but still verify dimensions first with a `curl | sips` round-trip if quality matters.
+   - **Inline image pasted in chat:** you can see it visually but the bytes are NOT on disk and NOT accessible to you. Do not silently skip it. Tell the organizer exactly one of:
+     1. "Drag the image from this chat to your Downloads folder and tell me the filename."
+     2. "If it's already hosted anywhere (Slack, Drive, a website), paste the URL."
+
+     Then proceed with whichever path they choose. Never claim the image was uploaded when it wasn't.
+
+   **Gotchas:** git pushes of files over ~1MB can fail with HTTP 400 `send-pack: unexpected disconnect`. Either keep the JPEG under ~1.5MB (quality 88, max 1800 wide is usually safe) or bump `git config http.postBuffer 524288000` before pushing. After upload, verify the result with `curl -sI <cover-url>` and `sips -g pixelWidth -g pixelHeight` - backend resizes to max 1600x900 fit:inside, so a well-prepped 3:1 crop comes out at 1600x533.
+
+   After a successful upload, confirm the image is attached and mention it in the final recap.
+
+4. **Save the campaign story.** Use the `campaign_story` prompt to generate a polished story, then call `save_campaign_story` with the campaign ID to persist it.
+
+5. **Confirm success.** Share the campaign URL from the `create_campaign` response. Let the organizer know the campaign is live as a draft and remind them to review and publish when ready.
