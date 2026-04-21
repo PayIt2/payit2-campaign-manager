@@ -246,9 +246,15 @@ If MCP is not available, complete Steps 1-7 as normal, then at Step 8 direct the
 
 After completing Steps 1-7:
 
-1. **Ask for confirmation.** "Ready to create this campaign on your PayIt2 account?"
+1. **Check for templates.** Before creating, call `list_templates` and filter results by the campaign's `mode`. If any templates match the campaign type or category, present them briefly:
 
-2. **Create the campaign.** Call `create_campaign` with all finalized details. Always include:
+   > "PayIt2 has a **[Template Name]** template that includes pre-built ticket options and questions for [category]. Want to start from that, or build a custom one from scratch?"
+
+   If the organizer picks a template, note its `slug` for use in the next step — the template's options and questions are cloned automatically, so you can skip building them manually in Step 2. If no templates match or the organizer prefers custom, proceed without a `templateSlug`.
+
+2. **Ask for confirmation.** "Ready to create this campaign on your PayIt2 account?"
+
+3. **Create the campaign.** Call `create_campaign` with all finalized details. Always include:
    - `title`, `mode`, `description`, `blurb`
    - `publish` (default `false` — creates as draft)
 
@@ -309,7 +315,7 @@ After completing Steps 1-7:
 
    Use `perGuest: true` for questions like "What is each attendee's name?" on event registrations where a single payer covers multiple guests.
 
-3. **Managing existing questions.** The MCP provides three tools for question management after creation:
+   **Managing questions after creation:** The MCP provides three tools for post-creation question management:
    - `list_campaign_questions` — returns all questions with their IDs, types, flags, and any linked option. Always call this before updating or deleting.
    - `update_campaign_question` — edits question text, type, choices, flags, or option binding by ID. Supports `paymentOptionTitle` for re-linking to a specific ticket tier.
    - `delete_campaign_question` — permanently removes a question by ID.
@@ -322,7 +328,7 @@ After completing Steps 1-7:
 
    Save the campaign ID and URL from the response.
 
-3. **Upload cover image (if available).** The `upload_campaign_image` tool accepts either `imageUrl` (preferred) or `imageBase64`. Always prefer `imageUrl` - base64 payloads blow past the ~25K token Read limit for anything above ~300KB, while any public URL is fetched server-side with no size penalty.
+4. **Upload cover image (if available).** The `upload_campaign_image` tool accepts either `imageUrl` (preferred) or `imageBase64`. Always prefer `imageUrl` - base64 payloads blow past the ~25K token Read limit for anything above ~300KB, while any public URL is fetched server-side with no size penalty.
 
    **Before you upload, verify the source is actually high-resolution:**
    ```bash
@@ -353,6 +359,6 @@ After completing Steps 1-7:
 
    After a successful upload, confirm the image is attached and mention it in the final recap.
 
-4. **Save the campaign story.** Use the `campaign_story` prompt to generate a polished story, then call `save_campaign_story` with the campaign ID to persist it.
+5. **Save the campaign story.** Use the `campaign_story` prompt to generate a polished story, then call `save_campaign_story` with the campaign ID to persist it.
 
-5. **Confirm success.** Share the campaign URL from the `create_campaign` response. Let the organizer know the campaign is live as a draft and remind them to review and publish when ready.
+6. **Confirm success.** Share the campaign URL from the `create_campaign` response. Let the organizer know the campaign is live as a draft and remind them to review and publish when ready.
