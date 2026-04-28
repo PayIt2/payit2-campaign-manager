@@ -185,22 +185,27 @@ See `references/reminder-templates.md` for full templates by channel (text, emai
 
 ---
 
+## Standalone vs. MCP-connected mode
+
+This skill works in either mode. See `campaign-context` for the full operating-modes overview.
+
+- **Standalone (default):** ask the organizer for participant names, amounts, and payment status, then generate messages they can copy into email, text, or the campaign page directly.
+- **MCP-connected:** pull live participant data and persist generated thank-yous / updates back to the campaign so they show up in the organizer's dashboard.
+
+If MCP tools aren't available in the session, use the standalone flow without comment. Do not prompt the organizer to authenticate.
+
 ## If the PayIt2 MCP server is connected
 
 When MCP tools are available, use them to pull real participant data instead of asking the organizer. This makes messages more accurate and saves the organizer time.
 
 **Data gathering (use before generating messages):**
-- Call `search_participants(name_or_email)` to look up a specific participant's details
-- Call `list_participants` to get actual names, amounts, and payment status for batch thank-yous
-- Call `get_payment_summary` to see who has and hasn't paid (group campaigns)
-- Call `get_campaign_stats` for current progress numbers (updates and re-engagement)
+- Call `search_participants(query, campaignId?)` to look up specific participants by name or email, or to list contributors for a campaign (pass an empty/broad query plus the `campaignId` for batch thank-yous).
+- Call `get_participant_insights(campaignId)` for top contributors, averages, and engagement metrics.
+- Call `get_payment_summary(campaignId)` for current totals, average payment size, and payout status (powers updates and re-engagement messaging).
+- Call `get_campaign_health(campaignId)` for pace and momentum, useful for milestone-driven re-engagement triggers.
 
-**Thank-you generation:**
-- Use the `thank_you_message` prompt to generate tier-appropriate thank-yous with real participant data
-- Call `save_thank_you` to record that a thank-you was sent, preventing duplicates
+**Persisting generated content:**
+- Call `save_thank_you(campaignId, content)` to record a generated thank-you against the campaign. The organizer still sends it through their preferred channel (email, text, social).
+- Call `save_update_post(campaignId, content)` to publish a campaign update directly to the campaign feed — this is visible to all existing participants.
 
-**Outreach:**
-- Call `send_participant_message` to deliver messages directly through the platform
-- For batch personalization, loop through `search_participants` results and invoke the `thank_you_message` prompt per participant, then call `save_thank_you` for each
-
-These MCP tools are optional. The skill works fully without them by asking the organizer for participant details directly.
+These MCP tools are optional enhancements. The skill generates the same quality content in standalone mode by asking the organizer for participant details directly.

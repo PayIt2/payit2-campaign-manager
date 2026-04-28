@@ -13,11 +13,12 @@ if echo "$PROMPT" | grep -qiE 'payit2\.com/(fundraiser|event|group)/[a-zA-Z0-9_-
 
   echo "[PayIt2 Campaign Detected: https://$URL]"
   echo "Type: $TYPE"
+  echo "Slug: $SLUG"
   echo ""
-  echo "Call get_campaign('$SLUG') to fetch live stats before responding."
+  echo "If the PayIt2 MCP server is connected, call get_campaign_overview with the slug or campaign ID to fetch live stats before responding. If MCP is not available, ask the organizer for the current numbers; the skills work fine in standalone mode."
   echo ""
   echo "If the organizer hasn't said what they want, ask which command to run:"
-  echo "  /check-in  — health score + prioritized action plan"
-  echo "  /promote   — promotion strategy and content calendar"
-  echo "  /engage    — participant messages (thank-yous, updates, re-engagement)"
+  echo "  /check-in  - health score and prioritized action plan"
+  echo "  /promote   - promotion strategy and content calendar"
+  echo "  /engage    - participant messages (thank-yous, updates, re-engagement)"
 fi

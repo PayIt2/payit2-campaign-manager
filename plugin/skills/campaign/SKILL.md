@@ -11,6 +11,13 @@ Create a PayIt2 campaign: $ARGUMENTS
 
 Guide organizers through building a high-converting campaign page on PayIt2.com. Works for all three campaign types: fundraisers, events, and groups. Every element (title, description, visuals, goal/pricing) directly impacts whether the campaign reaches its target.
 
+This skill works in two modes. See `campaign-context` for the operating-modes overview.
+
+- **Standalone (default):** complete the full creation workflow (Steps 1-7) and hand the organizer the finalized title, description, goal, ticket tiers, and image plan. They paste it into payit2.com to create the campaign themselves.
+- **MCP-connected:** Steps 1-7 stay the same, then Step 8 creates the campaign directly on the organizer's PayIt2 account via `create_campaign`, attaches the cover image via `upload_campaign_image`, persists the story via `save_campaign_story`, and applies a theme via `update_campaign_settings`. The organizer ends with a published draft, no copy-paste required.
+
+If MCP tools aren't available in the session, run the standalone flow without comment. Do not prompt the organizer to authenticate.
+
 Work through this launch workflow step by step:
 
 ---

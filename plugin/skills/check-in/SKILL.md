@@ -7,6 +7,13 @@ argument-hint: "[optional: campaign name or current stats]"
 
 Run a campaign health check: $ARGUMENTS
 
+This skill works in two modes. See `campaign-context` for the operating-modes overview.
+
+- **Standalone (default):** ask the organizer for current numbers (raised, donors, days active, etc.) and run the diagnostic against benchmarks below.
+- **MCP-connected:** pull live `get_campaign_health` and `get_payment_summary` data instead of asking, and persist `save_improvement_notes` back to the campaign so the action plan shows up in the organizer's dashboard.
+
+If MCP tools aren't available in the session, use the standalone flow below without comment.
+
 Follow this diagnostic workflow:
 
 ## 1. Gather Context

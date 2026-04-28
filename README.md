@@ -32,6 +32,15 @@ Once installed, the plugin gives Claude four skills you can invoke directly:
 
 You can also just describe your situation in plain language - Claude will figure out which skills to use.
 
+### Works with or without a PayIt2 account
+
+The plugin runs in two modes:
+
+- **Standalone (default).** Anyone with Claude can install and use the plugin. Claude walks you through everything — story, title, goal, pricing, social posts, thank-yous — and hands you finished content to paste into payit2.com.
+- **PayIt2-connected.** If you have a PayIt2 account and add your API key (Settings > API), Claude can also pull your live campaign data and create or update campaigns directly. Same workflows, less copy-paste.
+
+You can start in standalone mode and connect later — there's nothing to reinstall.
+
 **Example prompts:**
 - *"My neighbor's house burned down. Help me raise $15,000 for her family."*
 - *"I'm organizing a charity golf tournament for 120 people. Help me set up ticketing."*
@@ -63,7 +72,7 @@ claude plugin install payit2-campaign-assistant@marketplace
 ```
 plugin/
 ├── .claude-plugin/
-│   └── plugin.json                   # Plugin manifest (v1.5.0)
+│   └── plugin.json                   # Plugin manifest (v1.6.0)
 ├── skills/
 │   ├── campaign-context/             # Shared context engine (used by all user-facing skills)
 │   │   └── SKILL.md

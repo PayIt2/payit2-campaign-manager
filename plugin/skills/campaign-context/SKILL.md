@@ -7,6 +7,15 @@ description: Shared context-gathering engine used by all Campaign Assistant comm
 
 Gather the minimum context needed for the current command through natural conversation. Never ask for more than what the current task requires.
 
+## Operating Modes
+
+This plugin works in two modes. Both are first-class — pick whichever is available:
+
+- **Standalone mode (no MCP).** The default. Works for anyone using this plugin in Claude without a PayIt2 account or API key. Gather context by asking the organizer directly. Generate content, recommendations, and copy they can paste into payit2.com manually. Every skill in this plugin has a complete standalone workflow.
+- **MCP-connected mode.** If the `payit2` MCP server is configured AND the organizer has authenticated with their PayIt2 API key, you also get live campaign data, the ability to create and modify campaigns directly, and persistence of generated content (stories, thank-yous, updates) back to the platform. This unlocks substantially more — but it's an enhancement, not a requirement.
+
+**How to detect which mode you're in:** check whether MCP tools like `list_my_campaigns`, `get_campaign_overview`, or `create_campaign` are available in the current session. If they are, you're in MCP-connected mode. If not, default cleanly to standalone mode without prompting the organizer to install or authenticate anything — they came here for help, not setup.
+
 ## Context Model
 
 | Field | Needed By | Notes |
@@ -22,15 +31,15 @@ Gather the minimum context needed for the current command through natural conver
 | Channels used so far | /promote, /check-in | Optional |
 | Group size | /campaign, /check-in | Required for group campaigns |
 
-## MCP-First Data Gathering
+## MCP-Enhanced Data Gathering (when available)
 
-When the PayIt2 MCP server is available, use it to eliminate manual questions:
+When the PayIt2 MCP server is connected, use it to eliminate manual questions and pull live campaign data:
 
-1. **If the organizer provides a URL or campaign ID**, call `get_campaign` immediately to pre-fill: type, title, goal, current stats, and timeline. Do not ask for data already returned.
-2. **For /check-in**, also call `get_campaign_stats` for financial detail and `get_campaign_activity` to see the last 30 events — recent activity tells you whether the campaign has momentum or has stalled.
-3. **Cross-session memory**: At the start of any coaching command, call `get_conversation_history` for the campaign. If a session exists from the past 7 days, open with: "Last time we talked about [key recommendation] — have you had a chance to try that?" before diving into new analysis.
-4. **Only ask the organizer to fill gaps** — information not returned by MCP tools. Never re-ask data already fetched.
-5. **Fallback**: If MCP is unavailable (no API key configured), proceed with the manual question flow below.
+1. **If the organizer provides a URL or campaign ID**, call `get_campaign_overview` immediately to pre-fill: type, title, goal, current stats, theme, and Verified-organizer state. Do not ask for data already returned.
+2. **For /check-in**, also call `get_campaign_health` for pace and run-rate analysis and `get_payment_summary` for financial detail — these tell you whether the campaign has momentum or has stalled.
+3. **Only ask the organizer to fill gaps** — information not returned by MCP tools. Never re-ask data already fetched.
+
+If MCP is not available, skip this section entirely and use the manual context-gathering rules below. Do not mention MCP, do not prompt the organizer to authenticate — just proceed with the standalone flow.
 
 ## Context-Gathering Rules
 
